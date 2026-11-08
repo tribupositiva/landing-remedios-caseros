@@ -1,0 +1,1657 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="200 Soluciones Naturales y recetas herbales paso a paso con dosis exactas. Alivia molestias cotidianas desde casa sin depender de fármacos. 70% OFF hoy.">
+    <meta property="og:title" content="200 Soluciones Naturales para Problemas Cotidianos – Edición Digital">
+    <meta property="og:description" content="Guía práctica con dosis exactas, fotos reales y 4 bonus exclusivos incluidos hoy.">
+    <meta property="og:type" content="product">
+    <title>200 Soluciones Naturales para Problemas Cotidianos – Edición Digital</title>
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Inter & Playfair Display -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet">
+
+    <!-- Schema Markup JSON-LD (Product + Rating + Offer) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org/",
+      "@type": "Product",
+      "name": "200 Soluciones Naturales para Problemas Cotidianos – Edición Digital",
+      "image": "images/book_cover_hero.jpg",
+      "description": "Guía práctica ilustrada con 200 recetas y remedios naturales caseros paso a paso con dosis exactas.",
+      "brand": {
+        "@type": "Brand",
+        "name": "200 Soluciones Naturales"
+      },
+      "offers": {
+        "@type": "Offer",
+        "url": "#oferta",
+        "priceCurrency": "USD",
+        "price": "14.95",
+        "priceValidUntil": "2026-12-31",
+        "availability": "https://schema.org/InStock",
+        "itemCondition": "https://schema.org/NewCondition"
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.97",
+        "reviewCount": "3400",
+        "bestRating": "5",
+        "worstRating": "1"
+      }
+    }
+    </script>
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            green: '#4e6e3c',
+                            greenDark: '#3b542c',
+                            greenLight: '#d8ecc8',
+                            sageBg: '#dce3d5',
+                            brown: '#8b6543',
+                            cream: '#faf8f5',
+                            gold: '#f5b82e',
+                            textDark: '#1c1e1b',
+                            textMuted: '#3d443b'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Acabados y sombras hiperrealistas de libro 3D */
+        .book-container-3d {
+            perspective: 1200px;
+        }
+        .book-3d {
+            transform: rotateY(-18deg) rotateX(4deg) translateZ(0);
+            transform-style: preserve-3d;
+            box-shadow: 
+                -12px 18px 30px rgba(0, 0, 0, 0.45),
+                -4px 4px 10px rgba(0, 0, 0, 0.25),
+                inset 5px 0 10px rgba(255, 255, 255, 0.5),
+                inset -3px 0 6px rgba(0, 0, 0, 0.25);
+            transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.5s ease;
+        }
+        .book-3d:hover {
+            transform: rotateY(-6deg) rotateX(2deg) translateY(-8px);
+            box-shadow: 
+                -16px 24px 38px rgba(0, 0, 0, 0.5),
+                -6px 6px 14px rgba(0, 0, 0, 0.3);
+        }
+        .book-spine-3d {
+            background: linear-gradient(90deg, 
+                rgba(255,255,255,0.25) 0%, 
+                rgba(0,0,0,0.22) 5%, 
+                rgba(255,255,255,0.4) 9%, 
+                rgba(0,0,0,0.08) 13%,
+                transparent 18%);
+        }
+        .book-pages-3d {
+            position: absolute;
+            right: -8px;
+            top: 2%;
+            width: 14px;
+            height: 96%;
+            background: repeating-linear-gradient(to right, #f4efe4, #f4efe4 2px, #ded7c6 2px, #ded7c6 3px);
+            border-radius: 0 4px 4px 0;
+            box-shadow: inset -2px 0 4px rgba(0,0,0,0.15);
+        }
+        .wood-texture {
+            background-color: #4a321f;
+            background-image: 
+                radial-gradient(circle at 50% 45%, rgba(92, 62, 38, 0.72) 0%, rgba(35, 22, 12, 0.95) 100%),
+                repeating-linear-gradient(15deg, rgba(255,255,255,0.025) 0px, rgba(255,255,255,0.025) 2px, transparent 2px, transparent 8px);
+        }
+        .paper-texture {
+            background-color: #fbf9f3;
+            background-image: radial-gradient(rgba(139, 101, 67, 0.08) 1px, transparent 0);
+            background-size: 16px 16px;
+        }
+
+        /* Estilos del Índice Clickeable Integrado */
+        .prob-btn {
+            width: 100%;
+            text-align: left;
+            background: #ffffff;
+            border: 2px solid #e3d9c6;
+            border-radius: 14px;
+            padding: 15px 16px;
+            font-size: 0.98rem;
+            font-weight: 700;
+            color: #263820;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            transition: all 0.2s ease;
+        }
+        .prob-btn:hover, .prob-btn:focus {
+            border-color: #4e6e3c;
+            outline: none;
+            background: #fbfdf9;
+        }
+        .prob-btn[aria-expanded="true"] {
+            background: #3b542c;
+            color: #ffffff;
+            border-color: #3b542c;
+            border-radius: 14px 14px 0 0;
+        }
+        .prob-btn .ico {
+            font-size: 1.35rem;
+            line-height: 1;
+        }
+        .prob-btn .arrow {
+            margin-left: auto;
+            color: #8b6543;
+            font-weight: 900;
+            font-size: 1.25rem;
+            transition: transform 0.2s ease;
+        }
+        .prob-btn[aria-expanded="true"] .arrow {
+            color: #ffd9a8;
+            transform: rotate(90deg);
+        }
+        .prob-panel {
+            display: none;
+            background: #f4f8f1;
+            border: 2px solid #3b542c;
+            border-top: 0;
+            border-radius: 0 0 14px 14px;
+            padding: 16px 18px;
+            margin-top: -2px;
+            font-size: 0.92rem;
+            line-height: 1.55;
+            color: #2b2620;
+            animation: fadeInScale 0.2s ease-out;
+        }
+        .prob-panel.open {
+            display: block;
+        }
+
+        @keyframes fadeInScale {
+            from {
+                opacity: 0;
+                transform: scale(0.97);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+        .animate-fadeIn {
+            animation: fadeInScale 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+    </style>
+</head>
+<body class="bg-[#ecefe8] text-brand-textDark font-sans antialiased selection:bg-brand-green selection:text-white text-base">
+
+    <!-- Contenedor Principal (Optimizado Móvil con Alta Conversión) -->
+    <div class="max-w-[540px] mx-auto bg-white shadow-2xl border-x border-gray-100 min-h-screen relative overflow-hidden pb-24">
+
+        <!-- 1. BARRA SUPERIOR DE URGENCIA -->
+        <div class="bg-brand-green text-white text-xs sm:text-sm font-medium py-2.5 px-3 flex items-center justify-center gap-2 overflow-hidden whitespace-nowrap">
+            <span class="inline-block w-2.5 h-2.5 rounded-full bg-amber-300 animate-pulse"></span>
+            <span class="opacity-95 truncate">¡Especial de Lanzamiento! <strong>70% OFF + 4 BONUS GRATIS</strong></span>
+            <span id="countdownTimer" class="font-mono font-bold underline ml-1" role="timer" aria-live="polite">04:18:45</span>
+            <a href="#oferta" class="bg-white/20 hover:bg-white/30 px-2 py-0.5 rounded text-xs font-bold transition ml-1">Ver Oferta →</a>
+        </div>
+
+        <!-- 2. ENCABEZADO -->
+        <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-sm border-b border-gray-100 px-4 py-3 flex items-center justify-between">
+            <div class="flex items-center gap-1.5 text-[11px] font-bold text-brand-green bg-brand-greenLight/60 px-2.5 py-1 rounded-full">
+                <span>🔒</span>
+                <span>Sitio Oficial</span>
+            </div>
+
+            <a href="#oferta" class="flex items-center gap-1.5 select-none" aria-label="Ir al inicio de la página">
+                <svg class="w-6 h-6 text-brand-green fill-current" viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M17,8C8,10 5.9,16.17 3.82,21.34L5.71,22L6.66,19.7C7.14,19.87 7.64,20 8,20C19,20 22,3 22,3C21,5 14,5.25 9,6.25C4,7.25 2,11.5 2,13.5C2,15.5 3.75,17.25 3.75,17.25C7,8 17,8 17,8Z"/>
+                </svg>
+                <span class="font-serif text-2xl font-bold tracking-tight text-brand-textDark">200</span>
+                <span class="h-5 w-[1px] bg-gray-300 mx-0.5 inline-block"></span>
+                <span class="flex flex-col leading-[0.95] text-[10px] font-semibold tracking-widest text-brand-textMuted uppercase">
+                    <span>Soluciones</span>
+                    <span>Naturales</span>
+                </span>
+            </a>
+
+            <a href="#oferta" aria-label="Ir a la oferta y ver carrito" class="p-1.5 text-gray-700 hover:text-brand-green rounded-lg relative transition">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"/>
+                </svg>
+                <span id="cartBadge" class="absolute -top-0.5 -right-0.5 bg-brand-green text-white text-[11px] font-bold w-4 h-4 rounded-full flex items-center justify-center">🎁</span>
+            </a>
+        </header>
+
+        <!-- PRUEBA SOCIAL ARRIBA -->
+        <div class="bg-brand-cream border-b border-amber-900/10 px-4 py-2 flex items-center justify-center gap-2 text-xs sm:text-[13px]">
+            <div class="flex text-brand-gold text-sm sm:text-base leading-none" role="img" aria-label="Calificación 5 de 5 estrellas">
+                <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+            </div>
+            <span class="font-bold text-brand-textDark">4.97/5</span>
+            <span class="text-brand-textMuted">• Más de <strong>3,400 familias</strong> ya lo usan en casa</span>
+        </div>
+
+        <div class="bg-amber-50/90 border-b border-amber-200/60 px-4 py-1.5 flex items-center justify-center gap-2 text-xs sm:text-[13px] text-brand-textDark">
+            <span class="relative flex h-2 w-2" aria-hidden="true">
+                <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-500 opacity-75"></span>
+                <span class="relative inline-flex rounded-full h-2 w-2 bg-green-600"></span>
+            </span>
+            <span>🔥 <strong id="liveViewersTop">47</strong> personas están viendo esta página ahora mismo</span>
+        </div>
+
+        <main>
+
+            <!-- ======================================================== -->
+            <!-- 🌟 TITULAR DE TRANSFORMACIÓN ARRIBA DE LA PRIMERA IMAGEN -->
+            <!-- ======================================================== -->
+            <section class="px-4 pt-5 pb-3 text-center">
+                <div class="inline-flex items-center gap-1.5 bg-amber-100 text-brand-brown text-xs font-bold px-3 py-1 rounded-full mb-3 shadow-xs">
+                    <span>📖</span> Edición Digital Ilustrada + 4 Regalos Exclusivos
+                </div>
+
+                <!-- TÍTULO PRINCIPAL (H1) DESTACADO Y AGRANDADO PARA MÓVIL -->
+                <h1 class="text-2xl sm:text-3xl font-extrabold text-brand-textDark leading-tight tracking-tight">
+                    Alivia Molestias Digestivas, Insomnio y Dolores en Menos de 15 Minutos Con Ingredientes de Tu Cocina
+                </h1>
+
+                <!-- SUBTÍTULO CON BUEN CONTRASTE Y TAMAÑO PARA MÓVIL -->
+                <p class="mt-3 text-[15px] sm:text-base text-brand-textMuted leading-relaxed">
+                    La guía práctica paso a paso con <strong>200 soluciones naturales probadas</strong>, dosis exactas y fotos reales para cuidar a toda tu familia sin gastar en farmacias.
+                </p>
+
+                <!-- MICRO TESTIMONIOS RÁPIDOS ARRIBA DEL FOLD -->
+                <div class="mt-3 flex items-center justify-center gap-3 text-xs text-brand-textDark font-medium">
+                    <span class="flex items-center gap-1">✓ 100% Ingredientes Caseros</span>
+                    <span>•</span>
+                    <span class="flex items-center gap-1">✓ Dosis Seguras Paso a Paso</span>
+                </div>
+            </section>
+
+            <!-- ======================================================== -->
+            <!-- 3. COMPOSICIÓN HERO DEL LIBRO CON MOCKUP 3D REDISEÑADO -->
+            <!-- ======================================================== -->
+            <section class="px-3 pt-1 pb-3">
+                <div class="relative rounded-2xl overflow-hidden wood-texture shadow-xl border border-amber-950/25">
+                    <!-- Decoración botánica de fondo -->
+                    <div class="absolute inset-0 pointer-events-none opacity-85" aria-hidden="true">
+                        <div class="absolute -top-6 -left-6 w-28 h-28 rounded-full bg-amber-500/30 blur-md"></div>
+                        <svg class="absolute top-1 left-1 w-20 h-20 text-amber-400/80" viewBox="0 0 100 100">
+                            <circle cx="35" cy="35" r="30" fill="#d97706" stroke="#fef3c7" stroke-width="4"/>
+                            <circle cx="35" cy="35" r="22" fill="#f59e0b"/>
+                            <path d="M35 13 L35 57 M13 35 L57 35 M19 19 L51 51 M19 51 L51 19" stroke="#fef3c7" stroke-width="2"/>
+                        </svg>
+                        <div class="absolute bottom-2 left-2 flex flex-wrap gap-1 w-24">
+                            <span class="text-2xl drop-shadow">🌼</span>
+                            <span class="text-xl drop-shadow">🌿</span>
+                            <span class="text-2xl drop-shadow">🌼</span>
+                            <span class="text-lg drop-shadow">🌱</span>
+                        </div>
+                        <div class="absolute bottom-2 right-2 flex flex-col items-end">
+                            <span class="text-2xl drop-shadow">🧄</span>
+                            <span class="text-2xl drop-shadow">🪻</span>
+                        </div>
+                        <div class="absolute top-2 right-2 flex gap-1">
+                            <span class="text-2xl drop-shadow">🫚</span>
+                            <span class="text-xl drop-shadow">🍂</span>
+                        </div>
+                    </div>
+
+                    <div class="relative z-10 pt-4 pb-6 px-3 flex flex-col items-center">
+                        <h2 class="text-white font-extrabold text-lg sm:text-xl tracking-wider uppercase drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)] mb-3">
+                            BENEFICIOS DE TENERLO EN CASA
+                        </h2>
+
+                        <!-- 5 Tarjetas con Texto Más Grande y Legible para Móvil -->
+                        <div class="grid grid-cols-5 gap-1.5 w-full mb-6">
+                            <div class="bg-amber-950/75 backdrop-blur-sm border border-amber-200/30 rounded-lg p-1.5 flex flex-col items-center text-center text-white">
+                                <div class="w-7 h-7 rounded-full bg-amber-100/20 flex items-center justify-center mb-1 text-amber-200">
+                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>
+                                </div>
+                                <span class="text-[9.5px] sm:text-[10.5px] leading-tight font-semibold">Botiquín en Casa</span>
+                            </div>
+                            <div class="bg-amber-950/75 backdrop-blur-sm border border-amber-200/30 rounded-lg p-1.5 flex flex-col items-center text-center text-white">
+                                <div class="w-7 h-7 rounded-full bg-amber-100/20 flex items-center justify-center mb-1 text-amber-200">
+                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"/></svg>
+                                </div>
+                                <span class="text-[9.5px] sm:text-[10.5px] leading-tight font-semibold">100% Seguro</span>
+                            </div>
+                            <div class="bg-amber-950/75 backdrop-blur-sm border border-amber-200/30 rounded-lg p-1.5 flex flex-col items-center text-center text-white">
+                                <div class="w-7 h-7 rounded-full bg-amber-100/20 flex items-center justify-center mb-1 text-amber-200">
+                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg>
+                                </div>
+                                <span class="text-[9.5px] sm:text-[10.5px] leading-tight font-semibold">Sin Químicos</span>
+                            </div>
+                            <div class="bg-amber-950/75 backdrop-blur-sm border border-amber-200/30 rounded-lg p-1.5 flex flex-col items-center text-center text-white">
+                                <div class="w-7 h-7 rounded-full bg-amber-100/20 flex items-center justify-center mb-1 text-amber-200">
+                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg>
+                                </div>
+                                <span class="text-[9.5px] sm:text-[10.5px] leading-tight font-semibold">Saber Familiar</span>
+                            </div>
+                            <div class="bg-amber-950/75 backdrop-blur-sm border border-amber-200/30 rounded-lg p-1.5 flex flex-col items-center text-center text-white">
+                                <div class="w-7 h-7 rounded-full bg-amber-100/20 flex items-center justify-center mb-1 text-amber-200">
+                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v13m0-13V6a2 2 0 112 2h-2zm0 0V5.5A2.5 2.5 0 109.5 8H12zm-7 4h14M5 12a2 2 0 110-4h14a2 2 0 110 4M5 12v7a2 2 0 002 2h10a2 2 0 002-2v-7"/></svg>
+                                </div>
+                                <span class="text-[9.5px] sm:text-[10.5px] leading-tight font-semibold">Paso a Paso</span>
+                            </div>
+                        </div>
+
+                        <!-- 📖 MOCKUP 3D REDISEÑADO CON PROFUNDIDAD Y PÁGINAS VISIBLES -->
+                        <div class="book-container-3d relative my-2 flex justify-center items-center">
+                            <div class="book-3d relative w-60 sm:w-68 aspect-[3/4.1] rounded-r-2xl rounded-l-sm overflow-hidden border-t border-r border-b border-white/30">
+                                <!-- Lomo 3D con reflejo -->
+                                <div class="book-spine-3d absolute inset-0 pointer-events-none rounded-r-2xl z-20"></div>
+                                
+                                <!-- Borde lateral de hojas de papel -->
+                                <div class="book-pages-3d z-10"></div>
+                                
+                                <!-- Imagen Portada Realista de Alta Calidad -->
+                                <img 
+                                    src="images/book_cover_hero.jpg" 
+                                    onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1544787219-7f47ccb76574?auto=format&fit=crop&w=700&q=80'"
+                                    alt="Portada oficial del libro: 200 Soluciones Naturales para Problemas Cotidianos" 
+                                    class="w-full h-full object-cover relative z-10 select-none pointer-events-none"
+                                >
+
+                                <!-- Sello Cinta Dorada Superior -->
+                                <div class="absolute top-0 right-6 z-25 bg-gradient-to-b from-amber-400 to-amber-600 text-brand-textDark font-black text-[9px] px-2.5 pt-1.5 pb-2 rounded-b shadow-md uppercase tracking-wider text-center">
+                                    ★ 200 Recetas
+                                </div>
+                            </div>
+                        </div>
+
+                        <p class="text-[11px] text-amber-200/90 font-medium mt-3 italic text-center">
+                            📖 Formato Digital Interactivo (PDF de Alta Resolución) • Compatible con Celular, Tablet y Computadora
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ======================================================== -->
+            <!-- 🌟 NUEVA SECCIÓN: ÍNDICE CLICKABLE POR PROBLEMA (CRO PRO) -->
+            <!-- ======================================================== -->
+            <section class="px-4 py-8 bg-[#fafcf8] border-y border-amber-900/10">
+                <div class="text-center max-w-md mx-auto mb-5">
+                    <span class="inline-block bg-brand-greenLight text-brand-greenDark font-extrabold text-[11px] uppercase tracking-wider px-3 py-1 rounded-full mb-2">
+                        🔍 Explora el Contenido del Libro
+                    </span>
+                    <h2 class="text-2xl sm:text-[26px] font-serif font-bold text-brand-textDark leading-tight">
+                        ¿Cuál es tu problema? Tocá el tuyo 👇
+                    </h2>
+                    <p class="mt-2 text-sm text-brand-textMuted leading-relaxed">
+                        El libro está organizado por <strong>síntoma o problema</strong>, no por planta. Tocá el que te pasa y descubrí cuántas soluciones naturales paso a paso vas a tener a mano.
+                    </p>
+                </div>
+
+                <!-- Grid de Acordeones Interactivos -->
+                <div class="space-y-2.5">
+                    
+                    <!-- 1. Sueño -->
+                    <div>
+                        <button type="button" class="prob-btn" aria-expanded="false" onclick="toggleProblem(this)">
+                            <span class="ico">😴</span>
+                            <span class="text-left leading-snug">Dificultad para dormir o insomnio</span>
+                            <span class="arrow">›</span>
+                        </button>
+                        <div class="prob-panel">
+                            <p class="font-semibold text-brand-greenDark">✓ El libro incluye <strong>11 soluciones naturales</strong> para esto.</p>
+                            <p class="text-xs sm:text-sm text-brand-textMuted mt-1">Elixires calmantes, vahos relajantes y mezclas de manzanilla, lavanda y melisa para apagar el ruido mental sin pastillas.</p>
+                            <a class="inline-flex items-center gap-1.5 bg-[#a84e12] hover:bg-[#8f3f0d] text-white font-bold text-xs uppercase px-4 py-2.5 rounded-lg mt-3 transition shadow-sm" href="#oferta">
+                                <span>Quiero ver las 11 soluciones</span> <span>→</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- 2. Cabeza y Estrés -->
+                    <div>
+                        <button type="button" class="prob-btn" aria-expanded="false" onclick="toggleProblem(this)">
+                            <span class="ico">🤕</span>
+                            <span class="text-left leading-snug">Dolores de cabeza, estrés y tensión</span>
+                            <span class="arrow">›</span>
+                        </button>
+                        <div class="prob-panel">
+                            <p class="font-semibold text-brand-greenDark">✓ El libro incluye <strong>13 soluciones naturales</strong> para esto.</p>
+                            <p class="text-xs sm:text-sm text-brand-textMuted mt-1">Compresas frías herbales, tónicos de romero y menta para aliviar la presión de sienes y nuca en minutos.</p>
+                            <a class="inline-flex items-center gap-1.5 bg-[#a84e12] hover:bg-[#8f3f0d] text-white font-bold text-xs uppercase px-4 py-2.5 rounded-lg mt-3 transition shadow-sm" href="#oferta">
+                                <span>Quiero ver las 13 soluciones</span> <span>→</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- 3. Fatiga -->
+                    <div>
+                        <button type="button" class="prob-btn" aria-expanded="false" onclick="toggleProblem(this)">
+                            <span class="ico">😮💨</span>
+                            <span class="text-left leading-snug">Fatiga, desgano y falta de enfoque</span>
+                            <span class="arrow">›</span>
+                        </button>
+                        <div class="prob-panel">
+                            <p class="font-semibold text-brand-greenDark">✓ El libro incluye <strong>11 soluciones naturales</strong> para esto.</p>
+                            <p class="text-xs sm:text-sm text-brand-textMuted mt-1">Infusiones vigorizantes matutinas, activadores de jengibre y cítricos sin sobreestimular el corazón.</p>
+                            <a class="inline-flex items-center gap-1.5 bg-[#a84e12] hover:bg-[#8f3f0d] text-white font-bold text-xs uppercase px-4 py-2.5 rounded-lg mt-3 transition shadow-sm" href="#oferta">
+                                <span>Quiero ver las 11 soluciones</span> <span>→</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- 4. Digestión -->
+                    <div>
+                        <button type="button" class="prob-btn" aria-expanded="false" onclick="toggleProblem(this)">
+                            <span class="ico">🤢</span>
+                            <span class="text-left leading-snug">Dolor de estómago, acidez y mala digestión</span>
+                            <span class="arrow">›</span>
+                        </button>
+                        <div class="prob-panel">
+                            <p class="font-semibold text-brand-greenDark">✓ El libro incluye <strong>21 soluciones naturales</strong> para esto.</p>
+                            <p class="text-xs sm:text-sm text-brand-textMuted mt-1">Jarabes de aloe vera, infusiones de hinojo, semillas de cilantro y menta para desinflamar el vientre después de comer.</p>
+                            <a class="inline-flex items-center gap-1.5 bg-[#a84e12] hover:bg-[#8f3f0d] text-white font-bold text-xs uppercase px-4 py-2.5 rounded-lg mt-3 transition shadow-sm" href="#oferta">
+                                <span>Quiero ver las 21 soluciones</span> <span>→</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- 5. Limpieza y Detox -->
+                    <div>
+                        <button type="button" class="prob-btn" aria-expanded="false" onclick="toggleProblem(this)">
+                            <span class="ico">🍃</span>
+                            <span class="text-left leading-snug">Limpieza interna, hígado graso y detox</span>
+                            <span class="arrow">›</span>
+                        </button>
+                        <div class="prob-panel">
+                            <p class="font-semibold text-brand-greenDark">✓ El libro incluye <strong>13 soluciones naturales</strong> para esto.</p>
+                            <p class="text-xs sm:text-sm text-brand-textMuted mt-1">Receta maestra de bardana, diente de león y ortiga verde para depurar riñones e hígado suavemente.</p>
+                            <a class="inline-flex items-center gap-1.5 bg-[#a84e12] hover:bg-[#8f3f0d] text-white font-bold text-xs uppercase px-4 py-2.5 rounded-lg mt-3 transition shadow-sm" href="#oferta">
+                                <span>Quiero ver las 13 soluciones</span> <span>→</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- 6. Azúcar y Circulación -->
+                    <div>
+                        <button type="button" class="prob-btn" aria-expanded="false" onclick="toggleProblem(this)">
+                            <span class="ico">🩸</span>
+                            <span class="text-left leading-snug">Azúcar en sangre, circulación y piernas pesadas</span>
+                            <span class="arrow">›</span>
+                        </button>
+                        <div class="prob-panel">
+                            <p class="font-semibold text-brand-greenDark">✓ El libro incluye <strong>20 soluciones naturales</strong> para esto.</p>
+                            <p class="text-xs sm:text-sm text-brand-textMuted mt-1">Tés de canela ceilán, hojas de olivo, castaño de indias y baños de inmersión para activar el retorno venoso.</p>
+                            <a class="inline-flex items-center gap-1.5 bg-[#a84e12] hover:bg-[#8f3f0d] text-white font-bold text-xs uppercase px-4 py-2.5 rounded-lg mt-3 transition shadow-sm" href="#oferta">
+                                <span>Quiero ver las 20 soluciones</span> <span>→</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- 7. Desequilibrios íntimos -->
+                    <div>
+                        <button type="button" class="prob-btn" aria-expanded="false" onclick="toggleProblem(this)">
+                            <span class="ico">🌸</span>
+                            <span class="text-left leading-snug">Cuidado íntimo, ciclo y equilibrio hormonal</span>
+                            <span class="arrow">›</span>
+                        </button>
+                        <div class="prob-panel">
+                            <p class="font-semibold text-brand-greenDark">✓ El libro incluye <strong>14 soluciones naturales</strong> para esto.</p>
+                            <p class="text-xs sm:text-sm text-brand-textMuted mt-1">Baños de asiento de caléndula, infusiones de salvia y compresas tibias para aliviar cólicos y molestias íntimas.</p>
+                            <a class="inline-flex items-center gap-1.5 bg-[#a84e12] hover:bg-[#8f3f0d] text-white font-bold text-xs uppercase px-4 py-2.5 rounded-lg mt-3 transition shadow-sm" href="#oferta">
+                                <span>Quiero ver las 14 soluciones</span> <span>→</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- 8. Músculos y Articulaciones -->
+                    <div>
+                        <button type="button" class="prob-btn" aria-expanded="false" onclick="toggleProblem(this)">
+                            <span class="ico">💪</span>
+                            <span class="text-left leading-snug">Dolor muscular, contracturas y articulaciones</span>
+                            <span class="arrow">›</span>
+                        </button>
+                        <div class="prob-panel">
+                            <p class="font-semibold text-brand-greenDark">✓ El libro incluye <strong>16 soluciones naturales</strong> para esto.</p>
+                            <p class="text-xs sm:text-sm text-brand-textMuted mt-1">Aceites macerados de romero y árnica, cataplasmas de arcilla y té dorado antiinflamatorio de cúrcuma.</p>
+                            <a class="inline-flex items-center gap-1.5 bg-[#a84e12] hover:bg-[#8f3f0d] text-white font-bold text-xs uppercase px-4 py-2.5 rounded-lg mt-3 transition shadow-sm" href="#oferta">
+                                <span>Quiero ver las 16 soluciones</span> <span>→</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- 9. Resfriados y Tos -->
+                    <div>
+                        <button type="button" class="prob-btn" aria-expanded="false" onclick="toggleProblem(this)">
+                            <span class="ico">🤧</span>
+                            <span class="text-left leading-snug">Resfriados, congestión y garganta irritada</span>
+                            <span class="arrow">›</span>
+                        </button>
+                        <div class="prob-panel">
+                            <p class="font-semibold text-brand-greenDark">✓ El libro incluye <strong>20 soluciones naturales</strong> para esto.</p>
+                            <p class="text-xs sm:text-sm text-brand-textMuted mt-1">Jarabes expectorantes de cebolla y miel de tomillo, gárgaras de salvia y vahos de eucalipto con dosis seguras.</p>
+                            <a class="inline-flex items-center gap-1.5 bg-[#a84e12] hover:bg-[#8f3f0d] text-white font-bold text-xs uppercase px-4 py-2.5 rounded-lg mt-3 transition shadow-sm" href="#oferta">
+                                <span>Quiero ver las 20 soluciones</span> <span>→</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- 10. Ojos, Oídos y Boca -->
+                    <div>
+                        <button type="button" class="prob-btn" aria-expanded="false" onclick="toggleProblem(this)">
+                            <span class="ico">👁️</span>
+                            <span class="text-left leading-snug">Molestias de ojos, encías y oídos</span>
+                            <span class="arrow">›</span>
+                        </button>
+                        <div class="prob-panel">
+                            <p class="font-semibold text-brand-greenDark">✓ El libro incluye <strong>20 soluciones naturales</strong> para esto.</p>
+                            <p class="text-xs sm:text-sm text-brand-textMuted mt-1">Lavados oculares de eufrasia, enjuagues antibacterianos de clavo y gotas tibias seguras para calmar dolor de oído.</p>
+                            <a class="inline-flex items-center gap-1.5 bg-[#a84e12] hover:bg-[#8f3f0d] text-white font-bold text-xs uppercase px-4 py-2.5 rounded-lg mt-3 transition shadow-sm" href="#oferta">
+                                <span>Quiero ver las 20 soluciones</span> <span>→</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- 11. Piel, Cabello y Uñas -->
+                    <div>
+                        <button type="button" class="prob-btn" aria-expanded="false" onclick="toggleProblem(this)">
+                            <span class="ico">💇</span>
+                            <span class="text-left leading-snug">Piel seca, dermatitis, cabello débil y hongos</span>
+                            <span class="arrow">›</span>
+                        </button>
+                        <div class="prob-panel">
+                            <p class="font-semibold text-brand-greenDark">✓ El libro incluye <strong>22 soluciones naturales</strong> para esto.</p>
+                            <p class="text-xs sm:text-sm text-brand-textMuted mt-1">Tónicos capilares de romero, pomadas caseras de caléndula y baños con árbol de té para uñas y piel sensible.</p>
+                            <a class="inline-flex items-center gap-1.5 bg-[#a84e12] hover:bg-[#8f3f0d] text-white font-bold text-xs uppercase px-4 py-2.5 rounded-lg mt-3 transition shadow-sm" href="#oferta">
+                                <span>Quiero ver las 22 soluciones</span> <span>→</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- 12. Primeros Auxilios -->
+                    <div>
+                        <button type="button" class="prob-btn" aria-expanded="false" onclick="toggleProblem(this)">
+                            <span class="ico">🩹</span>
+                            <span class="text-left leading-snug">Quemaduras leves, cortes y picaduras de insectos</span>
+                            <span class="arrow">›</span>
+                        </button>
+                        <div class="prob-panel">
+                            <p class="font-semibold text-brand-greenDark">✓ El libro incluye <strong>9 soluciones naturales</strong> para esto.</p>
+                            <p class="text-xs sm:text-sm text-brand-textMuted mt-1">Bálsamo cicatrizante de aloe y miel pura, cataplasma de llantén y compresas de vinagre para frenar la picazón.</p>
+                            <a class="inline-flex items-center gap-1.5 bg-[#a84e12] hover:bg-[#8f3f0d] text-white font-bold text-xs uppercase px-4 py-2.5 rounded-lg mt-3 transition shadow-sm" href="#oferta">
+                                <span>Quiero ver las 9 soluciones</span> <span>→</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- 13. Limpieza Hogar -->
+                    <div>
+                        <button type="button" class="prob-btn" aria-expanded="false" onclick="toggleProblem(this)">
+                            <span class="ico">🏠</span>
+                            <span class="text-left leading-snug">Hogar libre de tóxicos y desinfección natural</span>
+                            <span class="arrow">›</span>
+                        </button>
+                        <div class="prob-panel">
+                            <p class="font-semibold text-brand-greenDark">✓ El libro incluye <strong>11 soluciones naturales</strong> para esto.</p>
+                            <p class="text-xs sm:text-sm text-brand-textMuted mt-1">Desinfectantes con vinagre de manzana y cáscaras de naranja, polvos limpiadores de bicarbonato y aceites esenciales.</p>
+                            <a class="inline-flex items-center gap-1.5 bg-[#a84e12] hover:bg-[#8f3f0d] text-white font-bold text-xs uppercase px-4 py-2.5 rounded-lg mt-3 transition shadow-sm" href="#oferta">
+                                <span>Quiero ver las 11 soluciones</span> <span>→</span>
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+
+                <p class="text-center text-xs text-brand-textMuted mt-4">
+                    ⚠️ <em>Contenido práctico, seguro y tradicional. Cada receta incluye advertencias y contraindicaciones explícitas.</em>
+                </p>
+            </section>
+
+            <!-- 4. VALUE STACK & CTA PRINCIPAL -->
+            <section class="px-4 pt-6 pb-6">
+                <div class="bg-brand-cream p-4 rounded-xl border border-amber-900/15 flex items-center justify-between gap-3 shadow-xs">
+                    <div class="flex items-center gap-3">
+                        <span class="text-3xl">🎁</span>
+                        <div>
+                            <p class="text-xs sm:text-sm font-extrabold text-brand-textDark uppercase tracking-wide">Paquete Especial de Lanzamiento</p>
+                            <p class="text-xs sm:text-[13px] text-brand-textMuted">Libro Completo + <strong>4 Bonus de Regalo</strong> con <strong>70% de Descuento</strong> hoy.</p>
+                        </div>
+                    </div>
+                    <span class="bg-brand-brown text-white text-[11px] font-extrabold px-3 py-1 rounded-full shrink-0 animate-pulse">
+                        ÚLTIMOS CUPOS
+                    </span>
+                </div>
+
+                <ul class="mt-5 space-y-3.5 text-[15px] sm:text-base text-brand-textMuted">
+                    <li class="flex items-start gap-2.5">
+                        <span class="text-brand-green font-bold text-lg leading-none mt-0.5">✓</span>
+                        <span><strong>Actúa en 30 segundos:</strong> Busca el malestar y ve directo a la receta exacta sin perder tiempo.</span>
+                    </li>
+                    <li class="flex items-start gap-2.5">
+                        <span class="text-brand-green font-bold text-lg leading-none mt-0.5">✓</span>
+                        <span><strong>Ahorra cientos al año:</strong> Recetas con ingredientes de alacena (jengibre, miel, manzanilla, ajo).</span>
+                    </li>
+                    <li class="flex items-start gap-2.5">
+                        <span class="text-brand-green font-bold text-lg leading-none mt-0.5">✓</span>
+                        <span><strong>Cero dudas al preparar:</strong> Medidas en cucharaditas y tazas, fotos y tiempos exactos.</span>
+                    </li>
+                    <li class="flex items-start gap-2.5">
+                        <span class="text-brand-green font-bold text-lg leading-none mt-0.5">✓</span>
+                        <span><strong>Seguro para tu familia:</strong> Con advertencias médicas claras y dosis adaptadas.</span>
+                    </li>
+                </ul>
+
+                <!-- CTA 1 ALTO CONTRASTE -->
+                <a href="#oferta" class="mt-6 w-full min-h-[50px] bg-brand-green hover:bg-brand-greenDark active:scale-[0.99] text-white font-extrabold text-base sm:text-lg uppercase tracking-wide py-4 px-4 rounded-xl shadow-lg shadow-brand-green/30 transition flex items-center justify-center gap-2 group">
+                    <span>¡QUIERO MI PACK + 4 BONUS CON 70% OFF!</span>
+                    <span class="group-hover:translate-x-1 transition-transform">↓</span>
+                </a>
+
+                <div class="mt-3 flex flex-wrap items-center justify-center gap-x-3 gap-y-1 text-xs text-brand-textMuted text-center font-medium">
+                    <span>⚡ Descarga Inmediata</span>
+                    <span>•</span>
+                    <span>🔒 Pago 100% Seguro</span>
+                    <span>•</span>
+                    <span>🛡️ Garantía de 60 Días</span>
+                </div>
+            </section>
+
+            <!-- 5. SECCIÓN ESTILO DE VIDA: MUJER EN COCINA + FOTO GENERADA -->
+            <section class="px-4 py-4">
+                <div class="grid grid-cols-12 gap-3 items-center">
+                    <div class="col-span-7 relative rounded-2xl overflow-hidden shadow-md aspect-[4/5] bg-amber-100">
+                        <img 
+                            id="imgMujerCocina"
+                            src="images/mujer_cocina_remedios.jpg" 
+                            onerror="this.src='https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?auto=format&fit=crop&w=700&q=80'"
+                            alt="Mujer consultando el libro de soluciones naturales en su cocina" 
+                            loading="lazy"
+                            class="w-full h-full object-cover"
+                        >
+                        <div class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/75 via-black/35 to-transparent p-2.5 flex items-end justify-between text-white">
+                            <span class="text-xs font-semibold bg-brand-green px-2.5 py-0.5 rounded-full">Lectura en Casa</span>
+                            <span class="text-lg">🍵🌿</span>
+                        </div>
+                    </div>
+
+                    <div class="col-span-5 space-y-3.5 pl-1">
+                        <div class="flex items-center gap-2">
+                            <span class="text-xl">😴</span>
+                            <span class="text-xs sm:text-sm font-bold text-brand-textDark leading-tight">Problemas<br>de sueño</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <span class="text-xl">🍵</span>
+                            <span class="text-xs sm:text-sm font-bold text-brand-textDark leading-tight">Molestias<br>digestivas</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <span class="text-xl">⚡</span>
+                            <span class="text-xs sm:text-sm font-bold text-brand-textDark leading-tight">Fatiga y<br>baja energía</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <span class="text-xl">💪</span>
+                            <span class="text-xs sm:text-sm font-bold text-brand-textDark leading-tight">Dolores<br>musculares</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <span class="text-xl">🩸</span>
+                            <span class="text-xs sm:text-sm font-bold text-brand-textDark leading-tight">Cuidado del<br>azúcar</span>
+                        </div>
+                        <div class="pt-1">
+                            <span class="text-[12px] font-semibold text-brand-green italic">y 195 recetas más...</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 7. SECCIÓN CONTRASTE: VERDAD INCÓMODA -->
+            <section class="mx-3 my-4 rounded-2xl bg-gradient-to-b from-[#232b20] to-[#171d15] text-white p-5 sm:p-6 shadow-xl border border-amber-400/25 relative overflow-hidden">
+                <div class="inline-flex items-center gap-1.5 bg-red-600 text-white text-[11px] font-extrabold uppercase tracking-wider px-3 py-1 rounded-full mb-3">
+                    <span>⚠️</span> Verdad Incómoda
+                </div>
+
+                <h2 class="text-xl sm:text-2xl font-extrabold leading-snug text-amber-100">
+                    El Conocimiento Que la Industria Farmacéutica Prefiere Que No Tengas en Casa
+                </h2>
+
+                <p class="mt-3 text-sm sm:text-[15px] text-gray-200 leading-relaxed">
+                    ¿Alguna vez te preguntaste por qué para cada molestia cotidiana la única respuesta parece ser comprar otra caja de pastillas con efectos secundarios?
+                </p>
+
+                <div class="mt-4 bg-white/10 backdrop-blur-sm border border-white/15 rounded-xl p-4 space-y-3 text-xs sm:text-[13.5px] text-gray-100">
+                    <div class="flex items-start gap-2.5">
+                        <span class="text-red-400 font-extrabold text-base mt-0.5">✕</span>
+                        <p><strong class="text-white">El negocio del síntoma eterno:</strong> Una industria multimillonaria depende de que olvides cómo aliviar molestias comunes en tu cocina y vuelvas cada mes a la farmacia.</p>
+                    </div>
+                    <div class="flex items-start gap-2.5">
+                        <span class="text-amber-300 font-extrabold text-base mt-0.5">✓</span>
+                        <p><strong class="text-amber-200">Los principios activos ya están en tu alacena:</strong> Más del 40% de los medicamentos modernos derivan de plantas que puedes preparar en infusión o cataplasma por centavos.</p>
+                    </div>
+                    <div class="flex items-start gap-2.5">
+                        <span class="text-amber-300 font-extrabold text-base mt-0.5">✓</span>
+                        <p><strong class="text-amber-200">Tranquilidad a las 3:00 AM:</strong> Saber qué hacer de madrugada cuando alguien en casa se siente mal te devuelve el control y la paz mental.</p>
+                    </div>
+                </div>
+
+                <div class="mt-5 text-center">
+                    <a href="#oferta" class="inline-flex items-center justify-center gap-2 w-full sm:w-auto min-h-[48px] bg-amber-400 hover:bg-amber-300 text-brand-textDark font-extrabold text-sm sm:text-base uppercase tracking-wide px-6 py-3.5 rounded-xl shadow-lg transition">
+                        <span>¡Quiero Recuperar Este Conocimiento Hoy!</span>
+                        <span>→</span>
+                    </a>
+                </div>
+            </section>
+
+            <!-- 8. VISTAZO AL INTERIOR (RECETA EDITORIAL CON FOTOS REALES) -->
+            <section class="py-6 border-t border-gray-100">
+                <div class="px-6 text-center">
+                    <h2 class="text-2xl font-extrabold text-brand-textDark">Un Vistazo al Interior de Tu Libro</h2>
+                    <p class="mt-2 text-sm sm:text-[15px] text-brand-textMuted leading-relaxed">
+                        Cada remedio incluye ingredientes precisos, fotografías a color y el paso a paso detallado para que sepas exactamente cómo prepararlo sin dudas.
+                    </p>
+                </div>
+
+                <div class="mt-5 px-3">
+                    <div class="paper-texture border border-amber-900/15 rounded-xl shadow-md overflow-hidden relative">
+                        <div class="bg-amber-50/80 border-b border-amber-900/10 py-2 px-4 flex items-center justify-between text-xs text-brand-green font-semibold">
+                            <span>🌿🌞🌱🌼</span>
+                            <span class="italic font-serif text-brand-textMuted">200 Soluciones Naturales para Problemas Cotidianos</span>
+                            <span>🌺🍃🌾🍵</span>
+                        </div>
+
+                        <div class="p-4">
+                            <div class="text-center mb-3">
+                                <span class="inline-flex items-center gap-1 text-brand-green font-serif font-bold text-base sm:text-lg border-b-2 border-brand-green/30 pb-0.5">
+                                    🌿 Infusión de Limpieza y Digestión Profunda
+                                </span>
+                            </div>
+
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs sm:text-[13px] leading-relaxed text-brand-textMuted">
+                                <!-- Columna Izquierda con Foto Generada -->
+                                <div class="space-y-3">
+                                    <div class="rounded-lg overflow-hidden border border-amber-900/10 shadow-sm aspect-[4/3] bg-amber-100 relative">
+                                        <img 
+                                            id="imgPreparacionInfusion"
+                                            src="images/preparacion_infusion.jpg" 
+                                            onerror="this.src='https://images.unsplash.com/photo-1556679343-c7306c1976bc?auto=format&fit=crop&w=600&q=80'"
+                                            alt="Preparación de infusión herbal paso a paso" 
+                                            loading="lazy"
+                                            class="w-full h-full object-cover"
+                                        >
+                                    </div>
+
+                                    <p class="text-justify text-xs sm:text-[13px]">
+                                        <span class="float-left font-serif text-3xl font-bold text-brand-green mr-2 leading-none">E</span>sta infusión tradicional apoya los procesos naturales de desintoxicación del cuerpo. La raíz de bardana apoya la pureza celular, el diente de león vigoriza la función hepática y la ortiga favorece la eliminación suave de toxinas.
+                                    </p>
+
+                                    <!-- Cuadro Ingredientes -->
+                                    <div class="bg-white/95 border border-amber-900/15 rounded-lg p-3 shadow-xs">
+                                        <h4 class="font-bold text-brand-green text-xs sm:text-[13px] flex items-center gap-1 mb-2">
+                                            <span>🥣</span> Lo que necesitarás:
+                                        </h4>
+                                        <ul class="space-y-1 text-xs sm:text-[12.5px] pl-1 font-medium">
+                                            <li>✦ 1 cucharadita de raíz de bardana seca</li>
+                                            <li>✦ 1 cucharadita de hojas de diente de león</li>
+                                            <li>✦ 1 cucharadita de hojas de ortiga seca</li>
+                                            <li>✦ 1 taza de agua purificada (250 ml)</li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+                                <!-- Columna Derecha con Taza Lista -->
+                                <div class="space-y-3">
+                                    <div class="bg-amber-50/70 border border-amber-900/15 rounded-lg p-3">
+                                        <h4 class="font-bold text-brand-brown text-xs sm:text-[13px] flex items-center gap-1 mb-1.5">
+                                            <span>🫖</span> Cómo Prepararlo:
+                                        </h4>
+                                        <ol class="list-decimal list-inside space-y-1 text-xs sm:text-[12.5px]">
+                                            <li><strong>Hierve el agua:</strong> Llévala a punto de ebullición.</li>
+                                            <li><strong>Añade las hierbas:</strong> Retira del fuego e incorpora las plantas.</li>
+                                            <li><strong>Tapa e infusiona:</strong> Cubre y deja reposar 10 a 15 minutos.</li>
+                                            <li><strong>Cuela y bebe:</strong> Filtra antes de consumir tibio.</li>
+                                        </ol>
+                                    </div>
+
+                                    <div class="bg-green-50/70 border border-brand-green/20 rounded-lg p-2.5">
+                                        <h4 class="font-bold text-brand-green text-xs flex items-center gap-1 mb-0.5">
+                                            <span>⏱️</span> Dosis y Frecuencia:
+                                        </h4>
+                                        <p class="text-xs">Beber 1 taza al día en ayunas por ciclos de 5 a 7 días.</p>
+                                    </div>
+
+                                    <div class="rounded-lg overflow-hidden border border-amber-900/10 shadow-sm h-32 bg-stone-200 relative">
+                                        <img 
+                                            id="imgTazaInfusion"
+                                            src="images/taza_infusion_lista.jpg" 
+                                            onerror="this.src='https://images.unsplash.com/photo-1544787219-7f47ccb76574?auto=format&fit=crop&w=600&q=80'"
+                                            alt="Taza de cerámica con infusión herbal humeante lista" 
+                                            loading="lazy"
+                                            class="w-full h-full object-cover"
+                                        >
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bg-amber-50/80 border-t border-amber-900/10 py-1.5 px-4 flex items-center justify-between text-xs text-brand-textMuted font-medium">
+                            <span>🌿🌾🍃</span>
+                            <span class="bg-white border border-gray-200 px-3 py-0.5 rounded-full font-bold shadow-xs">Página 106 de 200</span>
+                            <span>🌼🌱🫙</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ======================================================== -->
+            <!-- 🌟 SECCIÓN RESEÑAS ENRIQUECIDA CON FOTOS REALES Y CLIENTES -->
+            <!-- ======================================================== -->
+            <section class="px-4 py-8 border-t border-gray-100 bg-[#faf8f5]">
+                <div class="text-center max-w-md mx-auto mb-6">
+                    <span class="inline-block bg-teal-100 text-teal-800 font-bold text-xs uppercase px-3 py-1 rounded-full mb-2">
+                        ⭐ Experiencias de Lectores
+                    </span>
+                    <h2 class="text-2xl font-extrabold text-brand-textDark leading-tight">
+                        Lo que Dicen Quienes Ya Cuidan a Su Familia Con el Libro
+                    </h2>
+                    <p class="text-xs sm:text-sm text-brand-textMuted mt-1">
+                        Más de <strong>3,400 familias</strong> en toda Hispanoamérica consultan este manual a diario.
+                    </p>
+                </div>
+
+                <!-- Resumen de Puntuación -->
+                <div class="flex flex-col items-center mb-6">
+                    <div class="flex items-center gap-1.5">
+                        <div class="flex text-brand-gold text-lg" role="img" aria-label="4.97 de 5 estrellas">
+                            <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                        </div>
+                        <span class="text-sm font-bold text-brand-textDark">4.97 de 5</span>
+                    </div>
+                    <p class="text-xs text-brand-textMuted mt-0.5 flex items-center gap-1">
+                        Basado en reseñas auditadas y verificadas
+                        <span class="inline-flex items-center justify-center w-3.5 h-3.5 bg-teal-600 text-white text-[9px] rounded-sm font-bold">✓</span>
+                    </p>
+                </div>
+
+                <!-- Lista de 6 Reseñas con Fotos y Detalles Reales -->
+                <div class="space-y-4">
+                    
+                    <!-- Reseña 1 -->
+                    <div class="bg-white rounded-2xl p-4 shadow-sm border border-gray-200/80">
+                        <div class="flex items-center justify-between mb-2">
+                            <div class="flex text-brand-gold text-xs">★★★★★</div>
+                            <span class="text-[11px] text-gray-400">Hace 2 días</span>
+                        </div>
+                        <div class="flex items-center gap-2.5 mb-2.5">
+                            <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=120&q=80" alt="Gloria P." loading="lazy" class="w-9 h-9 rounded-full object-cover border border-brand-green/30">
+                            <div>
+                                <span class="font-bold text-sm text-brand-textDark block leading-none">Gloria P.</span>
+                                <span class="text-[11px] text-teal-700 font-semibold flex items-center gap-0.5 mt-0.5">
+                                    <span class="inline-flex items-center justify-center w-3 h-3 bg-teal-600 text-white text-[8px] rounded-full font-bold">✓</span>
+                                    Compra Verificada (Madrid)
+                                </span>
+                            </div>
+                        </div>
+                        <p class="text-xs sm:text-[13.5px] text-brand-textMuted leading-relaxed">
+                            "Gracias a este libro no entré en pánico cuando mi esposo se despertó con un dolor muscular tremendo a las 4 de la mañana. Busqué en el celular el remedio antiinflamatorio de jengibre y cúrcuma, lo preparé en 10 minutos y pudo descansar y trabajar. Ya se pagó solo."
+                        </p>
+                        <div class="mt-3 flex items-center gap-2 bg-amber-50/60 p-2 rounded-xl border border-amber-900/10">
+                            <img src="https://images.unsplash.com/photo-1544787219-7f47ccb76574?auto=format&fit=crop&w=150&q=80" alt="Té preparado" class="w-12 h-12 object-cover rounded-lg">
+                            <span class="text-[11px] text-brand-textMuted italic">"Foto que envié a mi hija preparando el té nocturno de la página 78."</span>
+                        </div>
+                    </div>
+
+                    <!-- Reseña 2 -->
+                    <div class="bg-white rounded-2xl p-4 shadow-sm border border-gray-200/80">
+                        <div class="flex items-center justify-between mb-2">
+                            <div class="flex text-brand-gold text-xs">★★★★★</div>
+                            <span class="text-[11px] text-gray-400">Hace 4 días</span>
+                        </div>
+                        <div class="flex items-center gap-2.5 mb-2.5">
+                            <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=120&q=80" alt="Sandra Flores" loading="lazy" class="w-9 h-9 rounded-full object-cover border border-brand-green/30">
+                            <div>
+                                <span class="font-bold text-sm text-brand-textDark block leading-none">Sandra Flores</span>
+                                <span class="text-[11px] text-teal-700 font-semibold flex items-center gap-0.5 mt-0.5">
+                                    <span class="inline-flex items-center justify-center w-3 h-3 bg-teal-600 text-white text-[8px] rounded-full font-bold">✓</span>
+                                    Compra Verificada (CDMX)
+                                </span>
+                            </div>
+                        </div>
+                        <p class="text-xs sm:text-[13.5px] text-brand-textMuted leading-relaxed">
+                            "Buscas el síntoma y vas directo a la página. En 30 segundos sabes exactamente qué hacer. Además imprimí la tabla de primeros auxilios herbales del Bonus 3 y la tengo pegada en el refrigerador. ¡Toda mi familia la consulta antes de comprar pastillas!"
+                        </p>
+                        <div class="mt-3 flex items-center gap-2 bg-amber-50/60 p-2 rounded-xl border border-amber-900/10">
+                            <img src="https://images.unsplash.com/photo-1556679343-c7306c1976bc?auto=format&fit=crop&w=150&q=80" alt="Hierbas de alacena" class="w-12 h-12 object-cover rounded-lg">
+                            <span class="text-[11px] text-brand-textMuted italic">"Mi rincón de hierbas frescas y secas en la cocina."</span>
+                        </div>
+                    </div>
+
+                    <!-- Reseña 3 -->
+                    <div class="bg-white rounded-2xl p-4 shadow-sm border border-gray-200/80">
+                        <div class="flex items-center justify-between mb-2">
+                            <div class="flex text-brand-gold text-xs">★★★★★</div>
+                            <span class="text-[11px] text-gray-400">Hace 1 semana</span>
+                        </div>
+                        <div class="flex items-center gap-2.5 mb-2.5">
+                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=120&q=80" alt="Carlos Andrés M." loading="lazy" class="w-9 h-9 rounded-full object-cover border border-brand-green/30">
+                            <div>
+                                <span class="font-bold text-sm text-brand-textDark block leading-none">Carlos Andrés M.</span>
+                                <span class="text-[11px] text-teal-700 font-semibold flex items-center gap-0.5 mt-0.5">
+                                    <span class="inline-flex items-center justify-center w-3 h-3 bg-teal-600 text-white text-[8px] rounded-full font-bold">✓</span>
+                                    Compra Verificada (Santiago)
+                                </span>
+                            </div>
+                        </div>
+                        <p class="text-xs sm:text-[13.5px] text-brand-textMuted leading-relaxed">
+                            "Sufría de gastritis y reflujo cada noche después de cenar y no quería depender de antiácidos a diario. Preparé la infusión calmante de la página 42 con jengibre e hinojo que ya tenía en la alacena. En 3 días el alivio fue absoluto."
+                        </p>
+                    </div>
+
+                    <!-- Reseña 4 -->
+                    <div class="bg-white rounded-2xl p-4 shadow-sm border border-gray-200/80">
+                        <div class="flex items-center justify-between mb-2">
+                            <div class="flex text-brand-gold text-xs">★★★★★</div>
+                            <span class="text-[11px] text-gray-400">Hace 1 semana</span>
+                        </div>
+                        <div class="flex items-center gap-2.5 mb-2.5">
+                            <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=120&q=80" alt="Esperanza G." loading="lazy" class="w-9 h-9 rounded-full object-cover border border-brand-green/30">
+                            <div>
+                                <span class="font-bold text-sm text-brand-textDark block leading-none">Esperanza G.</span>
+                                <span class="text-[11px] text-teal-700 font-semibold flex items-center gap-0.5 mt-0.5">
+                                    <span class="inline-flex items-center justify-center w-3 h-3 bg-teal-600 text-white text-[8px] rounded-full font-bold">✓</span>
+                                    Compra Verificada (Bogotá)
+                                </span>
+                            </div>
+                        </div>
+                        <p class="text-xs sm:text-[13.5px] text-brand-textMuted leading-relaxed">
+                            "Me encantó que explica el porqué científico de cada hierba. Se lo mostré a mi sobrina que estudia medicina y quedó fascinada con la rigurosidad de las dosis y advertencias. Muy superior a los típicos blogs de internet."
+                        </p>
+                        <div class="mt-3 flex items-center gap-2 bg-amber-50/60 p-2 rounded-xl border border-amber-900/10">
+                            <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=150&q=80" alt="Preparación con miel" class="w-12 h-12 object-cover rounded-lg">
+                            <span class="text-[11px] text-brand-textMuted italic">"El jarabe casero de cebolla morada y miel para la tos de mi nieto."</span>
+                        </div>
+                    </div>
+
+                    <!-- Reseña 5 -->
+                    <div class="bg-white rounded-2xl p-4 shadow-sm border border-gray-200/80">
+                        <div class="flex items-center justify-between mb-2">
+                            <div class="flex text-brand-gold text-xs">★★★★★</div>
+                            <span class="text-[11px] text-gray-400">Hace 2 semanas</span>
+                        </div>
+                        <div class="flex items-center gap-2.5 mb-2.5">
+                            <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=120&q=80" alt="Valeria & Marcos" loading="lazy" class="w-9 h-9 rounded-full object-cover border border-brand-green/30">
+                            <div>
+                                <span class="font-bold text-sm text-brand-textDark block leading-none">Valeria R.</span>
+                                <span class="text-[11px] text-teal-700 font-semibold flex items-center gap-0.5 mt-0.5">
+                                    <span class="inline-flex items-center justify-center w-3 h-3 bg-teal-600 text-white text-[8px] rounded-full font-bold">✓</span>
+                                    Compra Verificada (Buenos Aires)
+                                </span>
+                            </div>
+                        </div>
+                        <p class="text-xs sm:text-[13.5px] text-brand-textMuted leading-relaxed">
+                            "Tengo 2 hijos pequeños y cada invierno era una pesadilla de jarabes costosos y antibióticos. El Bonus #2 de remedios para niños nos cambió la vida. Las infusiones de tomillo y manzanilla les calman la tos en minutos."
+                        </p>
+                    </div>
+
+                    <!-- Reseña 6 -->
+                    <div class="bg-white rounded-2xl p-4 shadow-sm border border-gray-200/80">
+                        <div class="flex items-center justify-between mb-2">
+                            <div class="flex text-brand-gold text-xs">★★★★★</div>
+                            <span class="text-[11px] text-gray-400">Hace 2 semanas</span>
+                        </div>
+                        <div class="flex items-center gap-2.5 mb-2.5">
+                            <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=120&q=80" alt="Roberto T." loading="lazy" class="w-9 h-9 rounded-full object-cover border border-brand-green/30">
+                            <div>
+                                <span class="font-bold text-sm text-brand-textDark block leading-none">Roberto T.</span>
+                                <span class="text-[11px] text-teal-700 font-semibold flex items-center gap-0.5 mt-0.5">
+                                    <span class="inline-flex items-center justify-center w-3 h-3 bg-teal-600 text-white text-[8px] rounded-full font-bold">✓</span>
+                                    Compra Verificada (Valencia)
+                                </span>
+                            </div>
+                        </div>
+                        <p class="text-xs sm:text-[13.5px] text-brand-textMuted leading-relaxed">
+                            "Compré la versión digital y la descargué de inmediato en mi iPad. El elixir nocturno del Bonus 4 me devolvió el sueño profundo después de meses durmiendo mal. Solo por eso ya vale 10 veces más de lo que pagué."
+                        </p>
+                    </div>
+
+                </div>
+            </section>
+
+            <!-- 10. TABLA COMPARATIVA -->
+            <section class="mt-4 bg-brand-sageBg px-4 py-8">
+                <div class="text-center max-w-md mx-auto">
+                    <h2 class="text-xl sm:text-2xl font-extrabold text-brand-textDark leading-snug">
+                        ¿Por Qué Este Libro y No Cualquier Otro Recetario?
+                    </h2>
+                    <p class="mt-2 text-sm text-brand-textMuted leading-relaxed">
+                        No es una enciclopedia confusa ni un blog sin rigor. Es un manual de auxilio rápido para tu hogar.
+                    </p>
+                </div>
+
+                <div class="mt-5 grid grid-cols-12 items-end">
+                    <div class="col-span-7"></div>
+                    <div class="col-span-2 flex justify-center pb-2">
+                        <div class="w-11 h-14 paper-texture rounded border border-amber-900/30 shadow p-1 text-center">
+                            <span class="font-serif text-[10px] font-bold text-brand-green block leading-none">200</span>
+                            <span class="text-[6px] uppercase font-bold block leading-tight">Soluciones</span>
+                            <span class="text-[9px] block mt-0.5">🌿</span>
+                        </div>
+                    </div>
+                    <div class="col-span-3 text-center pb-3 font-extrabold text-xs sm:text-sm text-brand-textDark">
+                        Otros Libros
+                    </div>
+                </div>
+
+                <div class="rounded-xl overflow-hidden shadow-md border border-gray-200/80 bg-white text-xs sm:text-sm">
+                    <div class="grid grid-cols-12 border-b border-gray-100">
+                        <div class="col-span-7 bg-brand-green text-white font-bold p-3.5 flex items-center justify-center text-center leading-snug">
+                            Recetas simples organizadas por síntoma
+                        </div>
+                        <div class="col-span-2 bg-white flex items-center justify-center border-r border-gray-100">
+                            <span class="text-brand-green font-extrabold text-lg">✓</span>
+                        </div>
+                        <div class="col-span-3 bg-white flex items-center justify-center">
+                            <span class="text-brand-textDark font-extrabold text-base">✕</span>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-12 border-b border-gray-100">
+                        <div class="col-span-7 bg-brand-green text-white font-bold p-3.5 flex items-center justify-center text-center leading-snug">
+                            Ingredientes comunes de alacena y mercado
+                        </div>
+                        <div class="col-span-2 bg-white flex items-center justify-center border-r border-gray-100">
+                            <span class="text-brand-green font-extrabold text-lg">✓</span>
+                        </div>
+                        <div class="col-span-3 bg-white flex items-center justify-center">
+                            <span class="text-brand-textDark font-extrabold text-base">✕</span>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-12 border-b border-gray-100">
+                        <div class="col-span-7 bg-brand-green text-white font-bold p-3.5 flex items-center justify-center text-center leading-snug">
+                            Dosis exactas, tiempos y fotografías reales
+                        </div>
+                        <div class="col-span-2 bg-white flex items-center justify-center border-r border-gray-100">
+                            <span class="text-brand-green font-extrabold text-lg">✓</span>
+                        </div>
+                        <div class="col-span-3 bg-white flex items-center justify-center">
+                            <span class="text-brand-textDark font-extrabold text-base">✕</span>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-12">
+                        <div class="col-span-7 bg-brand-green text-white font-bold p-3.5 flex items-center justify-center text-center leading-snug">
+                            Advertencias médicas y precauciones claras
+                        </div>
+                        <div class="col-span-2 bg-white flex items-center justify-center border-r border-gray-100">
+                            <span class="text-brand-green font-extrabold text-lg">✓</span>
+                        </div>
+                        <div class="col-span-3 bg-white flex items-center justify-center">
+                            <span class="text-brand-textDark font-extrabold text-base">✕</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ======================================================== -->
+            <!-- 11. SECCIÓN OFERTA BUNDLE + 4 BONUS (CONVERSIÓN MÁXIMA) -->
+            <!-- ======================================================== -->
+            <section id="oferta" class="px-3.5 py-8 bg-gradient-to-b from-[#f4f7f0] via-[#ebf2e3] to-[#f4f7f0] border-y-2 border-brand-green/30 relative">
+                
+                <div class="bg-brand-textDark text-white rounded-xl p-3.5 mb-5 shadow-md border border-amber-400/30">
+                    <div class="flex items-center justify-between gap-2 border-b border-white/15 pb-2.5 mb-2.5">
+                        <div class="flex items-center gap-1.5">
+                            <span class="inline-block w-2.5 h-2.5 rounded-full bg-red-500 animate-ping"></span>
+                            <span class="text-xs font-extrabold uppercase tracking-wider text-amber-300">Oferta Especial de Lanzamiento</span>
+                        </div>
+                        <span class="bg-red-600 text-white text-[11px] font-extrabold px-2.5 py-0.5 rounded uppercase">70% OFF HOY</span>
+                    </div>
+
+                    <div class="flex items-center justify-between gap-2">
+                        <p class="text-xs text-gray-200 leading-tight">
+                            El 70% de descuento y los 4 bonus gratuitos expiran en:
+                        </p>
+                        <div class="flex items-center gap-1 shrink-0 font-mono">
+                            <div class="bg-white/10 px-2 py-1 rounded text-center">
+                                <span id="bundleHrs" class="text-sm font-extrabold text-amber-300 block leading-none">04</span>
+                                <span class="text-[8px] uppercase text-gray-300">Hrs</span>
+                            </div>
+                            <span class="font-bold text-amber-300">:</span>
+                            <div class="bg-white/10 px-2 py-1 rounded text-center">
+                                <span id="bundleMins" class="text-sm font-extrabold text-amber-300 block leading-none">18</span>
+                                <span class="text-[8px] uppercase text-gray-300">Min</span>
+                            </div>
+                            <span class="font-bold text-amber-300">:</span>
+                            <div class="bg-white/10 px-2 py-1 rounded text-center">
+                                <span id="bundleSecs" class="text-sm font-extrabold text-amber-300 block leading-none">45</span>
+                                <span class="text-[8px] uppercase text-gray-300">Seg</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-3 pt-2 border-t border-white/10">
+                        <div class="flex justify-between text-xs font-semibold mb-1">
+                            <span class="text-amber-200">🔥 89% de paquetes con bonus reclamados</span>
+                            <span class="text-white font-bold">Quedan <span id="spotsLeft">11</span> cupos</span>
+                        </div>
+                        <div class="w-full h-2 bg-white/15 rounded-full overflow-hidden">
+                            <div class="bg-gradient-to-r from-amber-400 to-red-500 h-full w-[89%] rounded-full"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="text-center px-2 mb-5">
+                    <span class="inline-block bg-brand-brown text-white text-xs font-extrabold uppercase tracking-widest px-3.5 py-1 rounded-full mb-2 shadow-sm">
+                        🎁 Paquete Completo "Botiquín Natural en Casa"
+                    </span>
+                    <h2 class="text-xl sm:text-2xl font-extrabold text-brand-textDark leading-tight">
+                        Todo Lo Que Recibes Hoy Con Tu Acceso Inmediato
+                    </h2>
+                    <p class="mt-1.5 text-xs sm:text-sm text-brand-textMuted">
+                        Llévate el libro ilustrado principal más <strong>4 Regalos Exclusivos</strong> (Valorados en $37.00 USD) ¡100% GRATIS hoy!
+                    </p>
+                </div>
+
+                <!-- Desglose de Componentes -->
+                <div class="space-y-3">
+                    <div class="bg-white rounded-xl p-3.5 border-2 border-brand-green shadow-md flex gap-3.5 items-center relative overflow-hidden">
+                        <div class="absolute top-0 right-0 bg-brand-green text-white text-[10px] font-extrabold px-2.5 py-0.5 rounded-bl-lg uppercase">
+                            Libro Principal
+                        </div>
+                        <div class="w-16 aspect-[3/4] paper-texture rounded book-shadow p-1.5 flex flex-col justify-between text-center border border-amber-900/20 shrink-0">
+                            <span class="font-serif text-sm font-bold text-brand-green leading-none">200</span>
+                            <span class="text-[6px] font-bold uppercase text-brand-textDark">Soluciones</span>
+                            <span class="text-xs">🍵🌿</span>
+                            <span class="text-[6px] text-brand-textMuted">Edición PDF</span>
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="font-extrabold text-sm sm:text-base text-brand-textDark leading-snug pr-14">
+                                Ebook: 200 Soluciones Naturales para Problemas Cotidianos
+                            </h3>
+                            <p class="text-xs sm:text-[13px] text-brand-textMuted mt-1 leading-relaxed">
+                                200 recetas paso a paso organizadas por síntoma con fotos a color y dosis exactas.
+                            </p>
+                            <div class="mt-1.5 flex items-center gap-2 text-xs">
+                                <span class="text-gray-400 line-through font-semibold">Valor normal: $29.99</span>
+                                <span class="text-brand-green font-extrabold text-xs bg-brand-greenLight/60 px-2 py-0.5 rounded">Incluido</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 4 Bonus Cards -->
+                    <div class="bg-white rounded-xl p-3 border border-amber-900/15 shadow-sm flex gap-3 items-center relative">
+                        <div class="w-14 h-16 bg-amber-50 border border-amber-200 rounded-lg flex flex-col items-center justify-center p-1 text-center shrink-0">
+                            <span class="text-2xl">🌱</span>
+                            <span class="text-[8px] font-extrabold uppercase text-brand-brown mt-0.5">Bonus #1</span>
+                        </div>
+                        <div class="flex-1">
+                            <div class="flex items-center justify-between gap-1">
+                                <span class="text-xs font-extrabold uppercase text-brand-brown">🎁 Regalo #1</span>
+                                <span class="bg-green-100 text-brand-green font-extrabold text-[11px] px-2 py-0.5 rounded">¡GRATIS!</span>
+                            </div>
+                            <h4 class="font-extrabold text-xs sm:text-sm text-brand-textDark mt-0.5">
+                                Guía de Cultivo de Farmacia Viva en Macetas
+                            </h4>
+                            <p class="text-xs text-brand-textMuted leading-snug mt-0.5">
+                                Cómo cultivar las 15 plantas medicinales clave en tu balcón o ventana sin necesidad de jardín.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-xl p-3 border border-amber-900/15 shadow-sm flex gap-3 items-center relative">
+                        <div class="w-14 h-16 bg-amber-50 border border-amber-200 rounded-lg flex flex-col items-center justify-center p-1 text-center shrink-0">
+                            <span class="text-2xl">🍯</span>
+                            <span class="text-[8px] font-extrabold uppercase text-brand-brown mt-0.5">Bonus #2</span>
+                        </div>
+                        <div class="flex-1">
+                            <div class="flex items-center justify-between gap-1">
+                                <span class="text-xs font-extrabold uppercase text-brand-brown">🎁 Regalo #2</span>
+                                <span class="bg-green-100 text-brand-green font-extrabold text-[11px] px-2 py-0.5 rounded">¡GRATIS!</span>
+                            </div>
+                            <h4 class="font-extrabold text-xs sm:text-sm text-brand-textDark mt-0.5">
+                                Remedios Naturales Seguros para Niños
+                            </h4>
+                            <p class="text-xs text-brand-textMuted leading-snug mt-0.5">
+                                Jarabes suaves, infusiones calmantes y dosis adaptadas para aliviar tos, cólicos y sueño infantil.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-xl p-3 border border-amber-900/15 shadow-sm flex gap-3 items-center relative">
+                        <div class="w-14 h-16 bg-amber-50 border border-amber-200 rounded-lg flex flex-col items-center justify-center p-1 text-center shrink-0">
+                            <span class="text-2xl">📋</span>
+                            <span class="text-[8px] font-extrabold uppercase text-brand-brown mt-0.5">Bonus #3</span>
+                        </div>
+                        <div class="flex-1">
+                            <div class="flex items-center justify-between gap-1">
+                                <span class="text-xs font-extrabold uppercase text-brand-brown">🎁 Regalo #3</span>
+                                <span class="bg-green-100 text-brand-green font-extrabold text-[11px] px-2 py-0.5 rounded">¡GRATIS!</span>
+                            </div>
+                            <h4 class="font-extrabold text-xs sm:text-sm text-brand-textDark mt-0.5">
+                                Tabla Imprimible de Primeros Auxilios Herbales
+                            </h4>
+                            <p class="text-xs text-brand-textMuted leading-snug mt-0.5">
+                                Hoja resumen lista para pegar en el refrigerador y actuar en segundos ante cualquier malestar.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-xl p-3 border border-amber-900/15 shadow-sm flex gap-3 items-center relative">
+                        <div class="w-14 h-16 bg-amber-50 border border-amber-200 rounded-lg flex flex-col items-center justify-center p-1 text-center shrink-0">
+                            <span class="text-2xl">🌙</span>
+                            <span class="text-[8px] font-extrabold uppercase text-brand-brown mt-0.5">Bonus #4</span>
+                        </div>
+                        <div class="flex-1">
+                            <div class="flex items-center justify-between gap-1">
+                                <span class="text-xs font-extrabold uppercase text-brand-brown">🎁 Regalo #4</span>
+                                <span class="bg-green-100 text-brand-green font-extrabold text-[11px] px-2 py-0.5 rounded">¡GRATIS!</span>
+                            </div>
+                            <h4 class="font-extrabold text-xs sm:text-sm text-brand-textDark mt-0.5">
+                                Elixires Nocturnos para Dormir Profundo y Anti-Estrés
+                            </h4>
+                            <p class="text-xs text-brand-textMuted leading-snug mt-0.5">
+                                15 infusiones para relajar el sistema nervioso, apagar el insomnio y despertar con energía.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CAJA DE RESUMEN FINAL -->
+                <div class="mt-6 bg-white rounded-2xl p-5 border-2 border-brand-green shadow-xl text-center relative">
+                    <div class="inline-flex items-center gap-1 bg-red-100 text-red-700 text-xs font-extrabold px-3 py-1 rounded-full mb-2">
+                        <span>🔥</span> ¡AHORRAS $52.04 USD HOY (78% DE DESCUENTO TOTAL)!
+                    </div>
+
+                    <div class="text-xs sm:text-sm text-brand-textMuted space-y-1 max-w-xs mx-auto border-b border-gray-100 pb-3">
+                        <div class="flex justify-between">
+                            <span>Libro 200 Soluciones:</span>
+                            <span class="line-through text-gray-400">$29.99</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span>4 Bonus Exclusivos:</span>
+                            <span class="line-through text-gray-400">$37.00</span>
+                        </div>
+                        <div class="flex justify-between font-bold text-gray-600 pt-1">
+                            <span>Valor Total del Paquete:</span>
+                            <span class="line-through text-red-500 font-extrabold">$66.99 USD</span>
+                        </div>
+                    </div>
+
+                    <div class="mt-3">
+                        <p class="text-xs font-bold uppercase tracking-wider text-brand-textMuted">Lleva el Paquete Completo Hoy Por Solo:</p>
+                        <div class="flex items-center justify-center gap-2.5 mt-1">
+                            <span class="text-xl sm:text-2xl text-gray-400 line-through font-bold">$49.99</span>
+                            <span class="text-4xl sm:text-5xl font-extrabold text-brand-green tracking-tight">$14.95</span>
+                            <span class="bg-brand-brown text-white text-xs font-extrabold px-2.5 py-1 rounded-md">
+                                -70% OFF
+                            </span>
+                        </div>
+                        <p class="text-xs text-brand-textMuted mt-1">Pago único • Sin suscripciones • Acceso vitalicio</p>
+                    </div>
+
+                    <button onclick="openFastCheckout()" class="mt-4 w-full min-h-[50px] bg-brand-green hover:bg-brand-greenDark active:scale-[0.99] text-white font-extrabold text-base sm:text-lg uppercase tracking-wide py-4 px-4 rounded-xl shadow-lg shadow-brand-green/30 transition flex items-center justify-center gap-2 group">
+                        <span>¡SÍ, QUIERO MI PACK + 4 BONUS POR $14.95!</span>
+                        <span class="group-hover:translate-x-1 transition-transform">→</span>
+                    </button>
+
+                    <div class="mt-4 pt-3 border-t border-gray-100 grid grid-cols-3 gap-2 text-[11px] font-bold text-brand-textDark">
+                        <div class="flex flex-col items-center gap-1 bg-brand-cream p-2 rounded-lg">
+                            <span class="text-base">🔒</span>
+                            <span class="leading-tight">Pago Seguro SSL</span>
+                        </div>
+                        <div class="flex flex-col items-center gap-1 bg-brand-cream p-2 rounded-lg">
+                            <span class="text-base">⚡</span>
+                            <span class="leading-tight">Descarga Inmediata</span>
+                        </div>
+                        <div class="flex flex-col items-center gap-1 bg-brand-cream p-2 rounded-lg">
+                            <span class="text-base">🛡️</span>
+                            <span class="leading-tight">Garantía 60 Días</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 12. GARANTÍA 60 DÍAS -->
+            <section class="px-4 py-6">
+                <div class="bg-gradient-to-r from-[#fbf9f4] via-[#f5f0e4] to-[#fbf9f4] border border-amber-900/15 rounded-xl p-4 flex items-center justify-around relative overflow-hidden shadow-sm">
+                    <div class="flex flex-col items-center">
+                        <div class="w-24 h-24 rounded-full border-2 border-brand-brown bg-white flex flex-col items-center justify-center text-center p-2 shadow-md">
+                            <span class="font-serif text-2xl font-bold text-brand-green leading-none">60</span>
+                            <span class="text-[9px] font-extrabold uppercase tracking-wider text-brand-textDark mt-0.5">Días Garantía</span>
+                            <span class="text-[11px] text-brand-brown mt-0.5">★ ★ ★</span>
+                        </div>
+                        <div class="flex items-center gap-3 mt-2 text-xs font-bold text-brand-brown uppercase">
+                            <span>🔒 Sin Riesgo</span>
+                        </div>
+                    </div>
+
+                    <div class="w-28 aspect-[3/4] paper-texture rounded book-shadow p-2 flex flex-col justify-between text-center border border-amber-900/20">
+                        <div class="border border-brand-green/40 h-full p-1.5 flex flex-col justify-between">
+                            <div>
+                                <span class="font-serif text-lg font-bold text-brand-green block leading-none">200</span>
+                                <span class="font-serif text-[7px] font-bold uppercase block text-brand-textDark">Soluciones</span>
+                                <span class="font-serif text-[7px] font-bold uppercase block text-brand-green mt-0.5">Naturales</span>
+                            </div>
+                            <div class="bg-amber-50 py-1 rounded text-xs">🍵🌿</div>
+                            <span class="text-[6px] text-brand-textMuted">Edición Digital</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-5 px-2">
+                    <h2 class="text-xl sm:text-2xl font-extrabold text-brand-textDark">
+                        Compra 100% Sin Riesgo: 60 Días de Garantía
+                    </h2>
+                    <p class="mt-2 text-sm sm:text-[15px] text-brand-textMuted leading-relaxed">
+                        Lee el libro y prepara las recetas durante 60 días completos. Si sientes que no aprendiste nada valioso, envíanos un correo y te devolvemos el <strong>100% de tu dinero</strong> de inmediato. Sin preguntas y te quedas con el libro y los 4 bonus.
+                    </p>
+                    <div class="mt-4">
+                        <a href="#oferta" class="inline-block min-h-[48px] bg-brand-green hover:bg-brand-greenDark text-white font-bold text-sm sm:text-base px-6 py-3.5 rounded-xl shadow transition">
+                            ¡Quiero Mi Pack Protegido con Garantía!
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <!-- FOOTER -->
+        <footer class="bg-brand-green text-white px-8 py-10">
+            <h3 class="font-bold text-base mb-4">Información y Transparencia</h3>
+            <ul class="space-y-2.5 text-xs sm:text-sm text-white/90">
+                <li><button onclick="showInfoModal('Política de Privacidad', 'Tus datos están protegidos bajo cifrado SSL de 256 bits y jamás serán compartidos.')" class="hover:underline text-left">Política de Privacidad</button></li>
+                <li><button onclick="showInfoModal('Garantía de Devolución', 'Dispones de 60 días para solicitar el reembolso total del 100% sin preguntas.')" class="hover:underline text-left">Garantía de Devolución 60 Días</button></li>
+                <li><button onclick="showInfoModal('Términos del Servicio', 'Acceso digital vitalicio con descargas ilimitadas del archivo interactivo y sus 4 bonus en PDF.')" class="hover:underline text-left">Términos de Servicio</button></li>
+                <li><button onclick="showInfoModal('Atención al Cliente', 'Soporte 24/7 disponible escribiendo a contacto@200solucionesnaturales.com')" class="hover:underline text-left">Contacto y Soporte 24/7</button></li>
+            </ul>
+            <div class="mt-8 pt-6 border-t border-white/15 text-xs text-white/75 text-center">
+                © 2026 200 Soluciones Naturales. Todos los derechos reservados.
+            </div>
+        </footer>
+
+        <!-- BARRA STICKY INFERIOR -->
+        <div id="stickyBar" class="fixed bottom-0 left-1/2 -translate-x-1/2 w-full max-w-[540px] z-40 bg-white/95 backdrop-blur-md border-t border-gray-200 px-4 py-2.5 shadow-[0_-4px_20px_rgba(0,0,0,0.08)] flex items-center justify-between gap-3 transition-all duration-300">
+            <div>
+                <div class="flex items-center gap-1.5">
+                    <span class="inline-block w-2.5 h-2.5 rounded-full bg-red-500 animate-pulse"></span>
+                    <p class="text-xs font-extrabold text-brand-textDark leading-tight">Pack Completo + 4 Bonus</p>
+                </div>
+                <p class="text-[11px] font-semibold text-brand-brown">🔥 70% OFF • Últimos 11 cupos hoy</p>
+            </div>
+            <a href="#oferta" class="min-h-[48px] flex items-center justify-center bg-brand-green hover:bg-brand-greenDark text-white font-extrabold text-xs uppercase tracking-wider px-4 py-3 rounded-lg shadow-md transition shrink-0">
+                Ver Oferta 70% OFF →
+            </a>
+        </div>
+
+        <!-- MODAL DE CHECKOUT -->
+        <div id="checkoutModal" class="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm hidden items-center justify-center p-4" role="dialog" aria-modal="true" aria-labelledby="checkoutTitle">
+            <div class="bg-white rounded-2xl max-w-md w-full p-5 shadow-2xl border border-gray-100 relative animate-fadeIn">
+                <button onclick="closeFastCheckout()" aria-label="Cerrar ventana de pago" class="absolute top-3.5 right-3.5 w-8 h-8 rounded-full bg-gray-100 hover:bg-gray-200 flex items-center justify-center text-gray-600 font-bold">✕</button>
+                
+                <div class="flex items-center gap-3 pb-3.5 border-b border-gray-100">
+                    <div class="w-12 h-16 paper-texture rounded border border-amber-900/20 flex flex-col items-center justify-center p-1 text-center shrink-0">
+                        <span class="font-serif text-xs font-bold text-brand-green leading-none">200</span>
+                        <span class="text-[6px] font-bold uppercase">Soluciones</span>
+                        <span class="text-xs">🌿</span>
+                    </div>
+                    <div>
+                        <span class="text-[10px] font-bold uppercase tracking-wider text-brand-green bg-brand-greenLight/60 px-2 py-0.5 rounded">Pack Completo + 4 Bonus Gratis</span>
+                        <h3 id="checkoutTitle" class="font-extrabold text-sm sm:text-base text-brand-textDark mt-0.5">200 Soluciones Naturales + 4 Regalos</h3>
+                        <p class="text-xs sm:text-sm text-brand-textMuted">Total con 70% OFF: <strong class="text-brand-green text-sm sm:text-base">$14.95 USD</strong> <span class="line-through text-gray-400 text-xs">$49.99</span></p>
+                    </div>
+                </div>
+
+                <form onsubmit="completeOrder(event)" class="mt-4 space-y-3.5 text-xs sm:text-sm">
+                    <div>
+                        <label class="block font-bold text-brand-textDark mb-1">1. Tu Nombre Completo</label>
+                        <input type="text" required placeholder="Ej. María Laura Rodríguez" class="w-full border border-gray-300 rounded-lg px-3 py-2.5 focus:outline-none focus:border-brand-green text-sm">
+                    </div>
+                    <div>
+                        <label class="block font-bold text-brand-textDark mb-1">2. Correo para recibir la descarga inmediata (PDF)</label>
+                        <input type="email" id="checkoutEmail" required placeholder="tucorreo@ejemplo.com" class="w-full border border-gray-300 rounded-lg px-3 py-2.5 focus:outline-none focus:border-brand-green text-sm">
+                    </div>
+                    <div>
+                        <label class="block font-bold text-brand-textDark mb-1">3. Método de Pago Seguro</label>
+                        <div class="grid grid-cols-2 gap-2 text-xs sm:text-sm">
+                            <label class="border border-brand-green bg-brand-greenLight/20 rounded-lg p-2.5 flex items-center gap-2 cursor-pointer font-semibold">
+                                <input type="radio" name="payMethod" checked class="accent-brand-green">
+                                <span>💳 Tarjeta Débito/Crédito</span>
+                            </label>
+                            <label class="border border-gray-200 rounded-lg p-2.5 flex items-center gap-2 cursor-pointer font-semibold">
+                                <input type="radio" name="payMethod" class="accent-brand-green">
+                                <span>🅿️ PayPal</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="w-full min-h-[50px] bg-brand-green hover:bg-brand-greenDark text-white font-extrabold text-sm sm:text-base uppercase py-3.5 rounded-xl shadow-lg transition mt-2">
+                        ¡Completar Pedido y Descargar Ahora ($14.95)!
+                    </button>
+
+                    <p class="text-[11px] text-center text-brand-textMuted flex items-center justify-center gap-1.5 pt-1">
+                        <span>🔒 Encriptación SSL 256-bits</span> • <span>Garantía de 60 Días</span>
+                    </p>
+                </form>
+            </div>
+        </div>
+
+        <!-- Toast -->
+        <div id="toastNotification" class="fixed bottom-20 left-1/2 -translate-x-1/2 z-50 bg-brand-textDark text-white text-xs sm:text-sm px-4 py-3 rounded-xl shadow-xl flex items-center gap-3 transition-all duration-300 opacity-0 pointer-events-none max-w-xs w-full">
+            <span class="w-6 h-6 rounded-full bg-brand-green flex items-center justify-center text-white font-bold shrink-0">✓</span>
+            <div class="flex-1">
+                <p id="toastTitle" class="font-bold">¡Añadido al carrito!</p>
+                <p id="toastMessage" class="text-xs text-gray-300">Pack Digital ($14.95) listo para descargar.</p>
+            </div>
+        </div>
+
+        <!-- Cupón Modal Dinámico -->
+        <div id="couponModal" class="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm hidden items-center justify-center p-4" role="dialog" aria-modal="true" aria-labelledby="couponTitle">
+            <div class="bg-white rounded-2xl max-w-sm w-full p-6 shadow-2xl border border-gray-100 text-center relative animate-fadeIn">
+                <button onclick="closeCouponModal()" aria-label="Cerrar cupón" class="absolute top-3.5 right-3.5 w-7 h-7 rounded-full bg-gray-100 hover:bg-gray-200 flex items-center justify-center text-gray-600 font-bold text-xs">✕</button>
+                
+                <p class="text-xs font-bold text-brand-textMuted uppercase tracking-wider">
+                    Válido Solo Hoy <span id="currentDateSpan" class="text-brand-green font-bold"></span>
+                </p>
+                <h3 id="couponTitle" class="text-xl sm:text-2xl font-black text-brand-textDark mt-1">
+                    ¡Descuento Exclusivo Reservado!
+                </h3>
+                <p class="text-xs sm:text-sm text-brand-textMuted mt-2 leading-relaxed">
+                    Haz clic para activar tu código preferencial y asegurar los 4 regalos antes de que expire la sesión.
+                </p>
+
+                <div class="my-4 bg-brand-greenLight/30 border border-brand-green/30 border-dashed rounded-xl p-3 text-brand-green font-bold text-xs sm:text-sm">
+                    Código de Descuento: <strong>NATURAL70</strong>
+                </div>
+
+                <button onclick="applyCoupon()" class="w-full min-h-[48px] bg-brand-green hover:bg-brand-greenDark active:scale-[0.99] text-white font-extrabold text-sm uppercase py-3.5 rounded-xl shadow-lg transition">
+                    ¡Aplicar Mi Cupón y Reclamar Oferta!
+                </button>
+            </div>
+        </div>
+
+        <!-- Widget Flotante de Cupón -->
+        <div id="appliedCouponWidget" class="fixed bottom-3 right-3 z-40 bg-white border-2 border-brand-green rounded-xl p-3 shadow-2xl max-w-[240px] hidden animate-fadeIn text-right">
+            <div class="flex items-center justify-between mb-1">
+                <span class="text-[9px] font-extrabold uppercase bg-brand-green/20 text-brand-green px-1.5 py-0.5 rounded">Cupón NATURAL70 Activo</span>
+                <button onclick="hideAppliedWidget()" aria-label="Cerrar widget" class="text-gray-400 hover:text-gray-600 text-xs font-bold ml-1">✕</button>
+            </div>
+            <p class="text-xs font-semibold text-brand-textDark leading-tight">
+                Tu descuento está reservado por:
+            </p>
+            <p id="couponTimer" class="font-mono text-base font-extrabold text-red-600 mt-0.5">
+                20m 00s
+            </p>
+            <a href="#oferta" class="mt-2 block w-full bg-red-600 hover:bg-red-700 text-white font-extrabold text-xs uppercase tracking-wider py-2 px-3 rounded-lg shadow transition text-center">
+                ¡Ir a Mi Oferta ($14.95)!
+            </a>
+        </div>
+
+    </div>
+
+    <!-- SCRIPTS INTERACTIVOS -->
+    <script>
+        // Lógica del Índice Clickeable
+        function toggleProblem(btn) {
+            const panel = btn.nextElementSibling;
+            const isCurrentlyOpen = panel.classList.contains('open');
+
+            // Cerrar todos los demás paneles
+            document.querySelectorAll('.prob-panel').forEach(p => p.classList.remove('open'));
+            document.querySelectorAll('.prob-btn').forEach(b => b.setAttribute('aria-expanded', 'false'));
+
+            if (!isCurrentlyOpen) {
+                panel.classList.add('open');
+                btn.setAttribute('aria-expanded', 'true');
+            }
+        }
+
+        // Fecha Dinámica
+        (function initDynamicDate() {
+            const today = new Date();
+            const day = String(today.getDate()).padStart(2, '0');
+            const month = String(today.getMonth() + 1).padStart(2, '0');
+            const year = today.getFullYear();
+            const dateSpan = document.getElementById('currentDateSpan');
+            if (dateSpan) dateSpan.textContent = `(${day}/${month}/${year})`;
+        })();
+
+        // Checkout y Modales
+        function openFastCheckout() {
+            const modal = document.getElementById('checkoutModal');
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+        }
+
+        function closeFastCheckout() {
+            const modal = document.getElementById('checkoutModal');
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+        }
+
+        function completeOrder(e) {
+            e.preventDefault();
+            const email = document.getElementById('checkoutEmail').value;
+            closeFastCheckout();
+            showToast("¡Pedido Exitoso! 🎉", `Enviamos el enlace de descarga a ${email}`);
+        }
+
+        let remainingSeconds = 4 * 3600 + 18 * 60 + 45;
+        setInterval(() => {
+            if (remainingSeconds > 0) remainingSeconds--;
+            const hrs = String(Math.floor(remainingSeconds / 3600)).padStart(2, '0');
+            const mins = String(Math.floor((remainingSeconds % 3600) / 60)).padStart(2, '0');
+            const secs = String(remainingSeconds % 60).padStart(2, '0');
+            
+            const timerEl = document.getElementById('countdownTimer');
+            if (timerEl) timerEl.textContent = `${hrs}:${mins}:${secs}`;
+
+            const bHrs = document.getElementById('bundleHrs');
+            const bMins = document.getElementById('bundleMins');
+            const bSecs = document.getElementById('bundleSecs');
+            if (bHrs && bMins && bSecs) {
+                bHrs.textContent = hrs;
+                bMins.textContent = mins;
+                bSecs.textContent = secs;
+            }
+        }, 1000);
+
+        let toastTimeout;
+        function showToast(title, message) {
+            const toast = document.getElementById('toastNotification');
+            document.getElementById('toastTitle').textContent = title;
+            document.getElementById('toastMessage').textContent = message;
+            toast.classList.remove('opacity-0', 'pointer-events-none');
+            clearTimeout(toastTimeout);
+            toastTimeout = setTimeout(() => {
+                toast.classList.add('opacity-0', 'pointer-events-none');
+            }, 3800);
+        }
+
+        function showInfoModal(title, text) {
+            showToast(title, text);
+        }
+
+        function updateLiveViewers() {
+            const topEl = document.getElementById('liveViewersTop');
+            const current = parseInt(topEl ? topEl.textContent : '47', 10);
+            const delta = Math.floor(Math.random() * 5) - 2;
+            const nextVal = Math.max(36, Math.min(64, current + delta));
+            if (topEl) topEl.textContent = nextVal;
+        }
+        setInterval(updateLiveViewers, 5000);
+
+        let couponTriggered = false;
+        const offerSection = document.getElementById('oferta');
+
+        window.addEventListener('scroll', () => {
+            if (!offerSection || couponTriggered) return;
+            const rect = offerSection.getBoundingClientRect();
+            if (rect.top <= window.innerHeight * 0.75 && rect.bottom >= 0) {
+                couponTriggered = true;
+                setTimeout(showCouponModal, 1500);
+            }
+        });
+
+        function showCouponModal() {
+            const modal = document.getElementById('couponModal');
+            if (modal) {
+                modal.classList.remove('hidden');
+                modal.classList.add('flex');
+            }
+        }
+
+        function closeCouponModal() {
+            const modal = document.getElementById('couponModal');
+            if (modal) {
+                modal.classList.add('hidden');
+                modal.classList.remove('flex');
+            }
+        }
+
+        let couponSeconds = 20 * 60;
+        let couponTimerInterval;
+
+        function applyCoupon() {
+            closeCouponModal();
+            const widget = document.getElementById('appliedCouponWidget');
+            if (widget) widget.classList.remove('hidden');
+
+            const stickyBar = document.getElementById('stickyBar');
+            if (stickyBar) {
+                stickyBar.style.transform = 'translate(-50%, 150%)';
+                stickyBar.style.opacity = '0';
+                setTimeout(() => stickyBar.remove(), 400);
+            }
+
+            showToast("¡Cupón NATURAL70 Aplicado!", "Se ha reservado tu 70% de descuento y los 4 bonus.");
+
+            clearInterval(couponTimerInterval);
+            couponTimerInterval = setInterval(() => {
+                if (couponSeconds > 0) couponSeconds--;
+                const m = Math.floor(couponSeconds / 60);
+                const s = couponSeconds % 60;
+                const timerEl = document.getElementById('couponTimer');
+                if (timerEl) {
+                    timerEl.textContent = `${m}m ${String(s).padStart(2, '0')}s`;
+                }
+                if (couponSeconds <= 0) {
+                    clearInterval(couponTimerInterval);
+                    if (widget) widget.innerHTML = `<p class="text-xs font-bold text-red-600">¡El cupón ha expirado!</p>`;
+                }
+            }, 1000);
+        }
+
+        function hideAppliedWidget() {
+            const widget = document.getElementById('appliedCouponWidget');
+            if (widget) widget.classList.add('hidden');
+        }
+    </script>
+</body>
+</html>
