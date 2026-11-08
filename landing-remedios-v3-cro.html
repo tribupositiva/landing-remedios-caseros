@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="es" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
@@ -118,6 +118,65 @@
 
         .no-scrollbar::-webkit-scrollbar {
             display: none;
+        }
+                /* Estilos del Ãndice Clickeable Integrado */
+        .prob-btn {
+            width: 100%;
+            text-align: left;
+            background: #ffffff;
+            border: 2px solid #e3d9c6;
+            border-radius: 14px;
+            padding: 15px 16px;
+            font-size: 0.98rem;
+            font-weight: 700;
+            color: #263820;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            transition: all 0.2s ease;
+        }
+        .prob-btn:hover, .prob-btn:focus {
+            border-color: #4e6e3c;
+            outline: none;
+            background: #fbfdf9;
+        }
+        .prob-btn[aria-expanded="true"] {
+            background: #2b3d22;
+            color: #ffffff;
+            border-color: #2b3d22;
+            border-radius: 14px 14px 0 0;
+        }
+        .prob-btn .ico {
+            font-size: 1.35rem;
+            line-height: 1;
+        }
+        .prob-btn .arrow {
+            margin-left: auto;
+            color: #8b6543;
+            font-weight: 900;
+            font-size: 1.25rem;
+            transition: transform 0.2s ease;
+        }
+        .prob-btn[aria-expanded="true"] .arrow {
+            color: #ffd9a8;
+            transform: rotate(90deg);
+        }
+        .prob-panel {
+            display: none;
+            background: #f4f8f1;
+            border: 2px solid #2b3d22;
+            border-top: 0;
+            border-radius: 0 0 14px 14px;
+            padding: 16px 18px;
+            margin-top: -2px;
+            font-size: 0.92rem;
+            line-height: 1.55;
+            color: #2b2620;
+            animation: fadeInScale 0.2s ease-out;
+        }
+        .prob-panel.open {
+            display: block;
         }
         .no-scrollbar {
             -ms-overflow-style: none;
@@ -453,7 +512,7 @@
             </section>
 
             <!-- 7. SECCIÓN CONTRASTE: VERDAD INCÓMODA -->
-            <section class="mx-3 my-4 rounded-2xl bg-gradient-to-b from-[#232b20] to-[#171d15] text-white p-5 sm:p-6 shadow-xl border border-amber-400/25 relative overflow-hidden">
+            <section class="mx-3 my-4 rounded-2xl bg-[#23351d] text-white p-5 sm:p-6 shadow-xl border border-emerald-900/30 relative overflow-hidden">
                 <div class="inline-flex items-center gap-1.5 bg-red-600 text-white text-[11px] font-extrabold uppercase tracking-wider px-3 py-1 rounded-full mb-3">
                     <span>⚠️</span> Verdad Incómoda
                 </div>
@@ -620,6 +679,237 @@
                 </div>
             </section>
 
+            <section class="px-4 py-8 bg-[#fafcf8] border-y border-amber-900/10">
+                <div class="text-center max-w-md mx-auto mb-5">
+                    <span class="inline-block bg-brand-greenLight text-brand-greenDark font-extrabold text-[11px] uppercase tracking-wider px-3 py-1 rounded-full mb-2">
+                        🔍 Explora el Contenido del Libro
+                    </span>
+                    <h2 class="text-2xl sm:text-[26px] font-serif font-bold text-brand-textDark leading-tight">
+                        ¿Cuál es tu problema? Tocá el tuyo 👇
+                    </h2>
+                    <p class="mt-2 text-sm text-brand-textMuted leading-relaxed">
+                        El libro está organizado por <strong>síntoma o problema</strong>, no por planta. Tocá el que te pasa y descubrí cuántas soluciones naturales paso a paso vas a tener a mano.
+                    </p>
+                </div>
+
+                <!-- Grid de Acordeones Interactivos -->
+                <div class="space-y-2.5">
+                    
+                    <!-- 1. Sueño -->
+                    <div>
+                        <button type="button" class="prob-btn" aria-expanded="false" onclick="toggleProblem(this)">
+                            <span class="ico">😴</span>
+                            <span class="text-left leading-snug">Dificultad para dormir o insomnio</span>
+                            <span class="arrow">›</span>
+                        </button>
+                        <div class="prob-panel">
+                            <p class="font-semibold text-brand-greenDark">✓ El libro incluye <strong>11 soluciones naturales</strong> para esto.</p>
+                            <p class="text-xs sm:text-sm text-brand-textMuted mt-1">Elixires calmantes, vahos relajantes y mezclas de manzanilla, lavanda y melisa para apagar el ruido mental sin pastillas.</p>
+                            <a class="inline-flex items-center gap-1.5 bg-[#a84e12] hover:bg-[#8f3f0d] text-white font-bold text-xs uppercase px-4 py-2.5 rounded-lg mt-3 transition shadow-sm" href="#oferta">
+                                <span>Quiero ver las 11 soluciones</span> <span>→</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- 2. Cabeza y Estrés -->
+                    <div>
+                        <button type="button" class="prob-btn" aria-expanded="false" onclick="toggleProblem(this)">
+                            <span class="ico">🤕</span>
+                            <span class="text-left leading-snug">Dolores de cabeza, estrés y tensión</span>
+                            <span class="arrow">›</span>
+                        </button>
+                        <div class="prob-panel">
+                            <p class="font-semibold text-brand-greenDark">✓ El libro incluye <strong>13 soluciones naturales</strong> para esto.</p>
+                            <p class="text-xs sm:text-sm text-brand-textMuted mt-1">Compresas frías herbales, tónicos de romero y menta para aliviar la presión de sienes y nuca en minutos.</p>
+                            <a class="inline-flex items-center gap-1.5 bg-[#a84e12] hover:bg-[#8f3f0d] text-white font-bold text-xs uppercase px-4 py-2.5 rounded-lg mt-3 transition shadow-sm" href="#oferta">
+                                <span>Quiero ver las 13 soluciones</span> <span>→</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- 3. Fatiga -->
+                    <div>
+                        <button type="button" class="prob-btn" aria-expanded="false" onclick="toggleProblem(this)">
+                            <span class="ico">😮💨</span>
+                            <span class="text-left leading-snug">Fatiga, desgano y falta de enfoque</span>
+                            <span class="arrow">›</span>
+                        </button>
+                        <div class="prob-panel">
+                            <p class="font-semibold text-brand-greenDark">✓ El libro incluye <strong>11 soluciones naturales</strong> para esto.</p>
+                            <p class="text-xs sm:text-sm text-brand-textMuted mt-1">Infusiones vigorizantes matutinas, activadores de jengibre y cítricos sin sobreestimular el corazón.</p>
+                            <a class="inline-flex items-center gap-1.5 bg-[#a84e12] hover:bg-[#8f3f0d] text-white font-bold text-xs uppercase px-4 py-2.5 rounded-lg mt-3 transition shadow-sm" href="#oferta">
+                                <span>Quiero ver las 11 soluciones</span> <span>→</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- 4. Digestión -->
+                    <div>
+                        <button type="button" class="prob-btn" aria-expanded="false" onclick="toggleProblem(this)">
+                            <span class="ico">🤢</span>
+                            <span class="text-left leading-snug">Dolor de estómago, acidez y mala digestión</span>
+                            <span class="arrow">›</span>
+                        </button>
+                        <div class="prob-panel">
+                            <p class="font-semibold text-brand-greenDark">✓ El libro incluye <strong>21 soluciones naturales</strong> para esto.</p>
+                            <p class="text-xs sm:text-sm text-brand-textMuted mt-1">Jarabes de aloe vera, infusiones de hinojo, semillas de cilantro y menta para desinflamar el vientre después de comer.</p>
+                            <a class="inline-flex items-center gap-1.5 bg-[#a84e12] hover:bg-[#8f3f0d] text-white font-bold text-xs uppercase px-4 py-2.5 rounded-lg mt-3 transition shadow-sm" href="#oferta">
+                                <span>Quiero ver las 21 soluciones</span> <span>→</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- 5. Limpieza y Detox -->
+                    <div>
+                        <button type="button" class="prob-btn" aria-expanded="false" onclick="toggleProblem(this)">
+                            <span class="ico">🍃</span>
+                            <span class="text-left leading-snug">Limpieza interna, hígado graso y detox</span>
+                            <span class="arrow">›</span>
+                        </button>
+                        <div class="prob-panel">
+                            <p class="font-semibold text-brand-greenDark">✓ El libro incluye <strong>13 soluciones naturales</strong> para esto.</p>
+                            <p class="text-xs sm:text-sm text-brand-textMuted mt-1">Receta maestra de bardana, diente de león y ortiga verde para depurar riñones e hígado suavemente.</p>
+                            <a class="inline-flex items-center gap-1.5 bg-[#a84e12] hover:bg-[#8f3f0d] text-white font-bold text-xs uppercase px-4 py-2.5 rounded-lg mt-3 transition shadow-sm" href="#oferta">
+                                <span>Quiero ver las 13 soluciones</span> <span>→</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- 6. Azúcar y Circulación -->
+                    <div>
+                        <button type="button" class="prob-btn" aria-expanded="false" onclick="toggleProblem(this)">
+                            <span class="ico">🩸</span>
+                            <span class="text-left leading-snug">Azúcar en sangre, circulación y piernas pesadas</span>
+                            <span class="arrow">›</span>
+                        </button>
+                        <div class="prob-panel">
+                            <p class="font-semibold text-brand-greenDark">✓ El libro incluye <strong>20 soluciones naturales</strong> para esto.</p>
+                            <p class="text-xs sm:text-sm text-brand-textMuted mt-1">Tés de canela ceilán, hojas de olivo, castaño de indias y baños de inmersión para activar el retorno venoso.</p>
+                            <a class="inline-flex items-center gap-1.5 bg-[#a84e12] hover:bg-[#8f3f0d] text-white font-bold text-xs uppercase px-4 py-2.5 rounded-lg mt-3 transition shadow-sm" href="#oferta">
+                                <span>Quiero ver las 20 soluciones</span> <span>→</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- 7. Desequilibrios íntimos -->
+                    <div>
+                        <button type="button" class="prob-btn" aria-expanded="false" onclick="toggleProblem(this)">
+                            <span class="ico">🌸</span>
+                            <span class="text-left leading-snug">Cuidado íntimo, ciclo y equilibrio hormonal</span>
+                            <span class="arrow">›</span>
+                        </button>
+                        <div class="prob-panel">
+                            <p class="font-semibold text-brand-greenDark">✓ El libro incluye <strong>14 soluciones naturales</strong> para esto.</p>
+                            <p class="text-xs sm:text-sm text-brand-textMuted mt-1">Baños de asiento de caléndula, infusiones de salvia y compresas tibias para aliviar cólicos y molestias íntimas.</p>
+                            <a class="inline-flex items-center gap-1.5 bg-[#a84e12] hover:bg-[#8f3f0d] text-white font-bold text-xs uppercase px-4 py-2.5 rounded-lg mt-3 transition shadow-sm" href="#oferta">
+                                <span>Quiero ver las 14 soluciones</span> <span>→</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- 8. Músculos y Articulaciones -->
+                    <div>
+                        <button type="button" class="prob-btn" aria-expanded="false" onclick="toggleProblem(this)">
+                            <span class="ico">💪</span>
+                            <span class="text-left leading-snug">Dolor muscular, contracturas y articulaciones</span>
+                            <span class="arrow">›</span>
+                        </button>
+                        <div class="prob-panel">
+                            <p class="font-semibold text-brand-greenDark">✓ El libro incluye <strong>16 soluciones naturales</strong> para esto.</p>
+                            <p class="text-xs sm:text-sm text-brand-textMuted mt-1">Aceites macerados de romero y árnica, cataplasmas de arcilla y té dorado antiinflamatorio de cúrcuma.</p>
+                            <a class="inline-flex items-center gap-1.5 bg-[#a84e12] hover:bg-[#8f3f0d] text-white font-bold text-xs uppercase px-4 py-2.5 rounded-lg mt-3 transition shadow-sm" href="#oferta">
+                                <span>Quiero ver las 16 soluciones</span> <span>→</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- 9. Resfriados y Tos -->
+                    <div>
+                        <button type="button" class="prob-btn" aria-expanded="false" onclick="toggleProblem(this)">
+                            <span class="ico">🤧</span>
+                            <span class="text-left leading-snug">Resfriados, congestión y garganta irritada</span>
+                            <span class="arrow">›</span>
+                        </button>
+                        <div class="prob-panel">
+                            <p class="font-semibold text-brand-greenDark">✓ El libro incluye <strong>20 soluciones naturales</strong> para esto.</p>
+                            <p class="text-xs sm:text-sm text-brand-textMuted mt-1">Jarabes expectorantes de cebolla y miel de tomillo, gárgaras de salvia y vahos de eucalipto con dosis seguras.</p>
+                            <a class="inline-flex items-center gap-1.5 bg-[#a84e12] hover:bg-[#8f3f0d] text-white font-bold text-xs uppercase px-4 py-2.5 rounded-lg mt-3 transition shadow-sm" href="#oferta">
+                                <span>Quiero ver las 20 soluciones</span> <span>→</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- 10. Ojos, Oídos y Boca -->
+                    <div>
+                        <button type="button" class="prob-btn" aria-expanded="false" onclick="toggleProblem(this)">
+                            <span class="ico">👁️</span>
+                            <span class="text-left leading-snug">Molestias de ojos, encías y oídos</span>
+                            <span class="arrow">›</span>
+                        </button>
+                        <div class="prob-panel">
+                            <p class="font-semibold text-brand-greenDark">✓ El libro incluye <strong>20 soluciones naturales</strong> para esto.</p>
+                            <p class="text-xs sm:text-sm text-brand-textMuted mt-1">Lavados oculares de eufrasia, enjuagues antibacterianos de clavo y gotas tibias seguras para calmar dolor de oído.</p>
+                            <a class="inline-flex items-center gap-1.5 bg-[#a84e12] hover:bg-[#8f3f0d] text-white font-bold text-xs uppercase px-4 py-2.5 rounded-lg mt-3 transition shadow-sm" href="#oferta">
+                                <span>Quiero ver las 20 soluciones</span> <span>→</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- 11. Piel, Cabello y Uñas -->
+                    <div>
+                        <button type="button" class="prob-btn" aria-expanded="false" onclick="toggleProblem(this)">
+                            <span class="ico">💇</span>
+                            <span class="text-left leading-snug">Piel seca, dermatitis, cabello débil y hongos</span>
+                            <span class="arrow">›</span>
+                        </button>
+                        <div class="prob-panel">
+                            <p class="font-semibold text-brand-greenDark">✓ El libro incluye <strong>22 soluciones naturales</strong> para esto.</p>
+                            <p class="text-xs sm:text-sm text-brand-textMuted mt-1">Tónicos capilares de romero, pomadas caseras de caléndula y baños con árbol de té para uñas y piel sensible.</p>
+                            <a class="inline-flex items-center gap-1.5 bg-[#a84e12] hover:bg-[#8f3f0d] text-white font-bold text-xs uppercase px-4 py-2.5 rounded-lg mt-3 transition shadow-sm" href="#oferta">
+                                <span>Quiero ver las 22 soluciones</span> <span>→</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- 12. Primeros Auxilios -->
+                    <div>
+                        <button type="button" class="prob-btn" aria-expanded="false" onclick="toggleProblem(this)">
+                            <span class="ico">🩹</span>
+                            <span class="text-left leading-snug">Quemaduras leves, cortes y picaduras de insectos</span>
+                            <span class="arrow">›</span>
+                        </button>
+                        <div class="prob-panel">
+                            <p class="font-semibold text-brand-greenDark">✓ El libro incluye <strong>9 soluciones naturales</strong> para esto.</p>
+                            <p class="text-xs sm:text-sm text-brand-textMuted mt-1">Bálsamo cicatrizante de aloe y miel pura, cataplasma de llantén y compresas de vinagre para frenar la picazón.</p>
+                            <a class="inline-flex items-center gap-1.5 bg-[#a84e12] hover:bg-[#8f3f0d] text-white font-bold text-xs uppercase px-4 py-2.5 rounded-lg mt-3 transition shadow-sm" href="#oferta">
+                                <span>Quiero ver las 9 soluciones</span> <span>→</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- 13. Limpieza Hogar -->
+                    <div>
+                        <button type="button" class="prob-btn" aria-expanded="false" onclick="toggleProblem(this)">
+                            <span class="ico">🏠</span>
+                            <span class="text-left leading-snug">Hogar libre de tóxicos y desinfección natural</span>
+                            <span class="arrow">›</span>
+                        </button>
+                        <div class="prob-panel">
+                            <p class="font-semibold text-brand-greenDark">✓ El libro incluye <strong>11 soluciones naturales</strong> para esto.</p>
+                            <p class="text-xs sm:text-sm text-brand-textMuted mt-1">Desinfectantes con vinagre de manzana y cáscaras de naranja, polvos limpiadores de bicarbonato y aceites esenciales.</p>
+                            <a class="inline-flex items-center gap-1.5 bg-[#a84e12] hover:bg-[#8f3f0d] text-white font-bold text-xs uppercase px-4 py-2.5 rounded-lg mt-3 transition shadow-sm" href="#oferta">
+                                <span>Quiero ver las 11 soluciones</span> <span>→</span>
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+
+                <p class="text-center text-xs text-brand-textMuted mt-4">
+                    ⚠️ <em>Contenido práctico, seguro y tradicional. Cada receta incluye advertencias y contraindicaciones explícitas.</em>
+                </p>
+            </section>
+
             <!-- 10. TABLA COMPARATIVA -->
             <section class="mt-6 bg-brand-sageBg px-4 py-8">
                 <div class="text-center max-w-md mx-auto">
@@ -701,7 +991,7 @@
             <!-- ======================================================== -->
             <section id="oferta" class="px-3.5 py-8 bg-gradient-to-b from-[#f4f7f0] via-[#ebf2e3] to-[#f4f7f0] border-y-2 border-brand-green/30 relative">
                 
-                <div class="bg-brand-textDark text-white rounded-xl p-3.5 mb-5 shadow-md border border-amber-400/30">
+                <div class="bg-[#23351d] text-white rounded-xl p-3.5 mb-5 shadow-md border border-emerald-900/30">
                     <div class="flex items-center justify-between gap-2 border-b border-white/15 pb-2.5 mb-2.5">
                         <div class="flex items-center gap-1.5">
                             <span class="inline-block w-2.5 h-2.5 rounded-full bg-red-500 animate-ping"></span>
@@ -1101,6 +1391,20 @@
 
     <!-- SCRIPTS INTERACTIVOS -->
     <script>
+                // LÃ³gica del Ãndice Clickeable
+        function toggleProblem(btn) {
+            const panel = btn.nextElementSibling;
+            const isCurrentlyOpen = panel.classList.contains('open');
+
+            // Cerrar todos los demÃ¡s paneles
+            document.querySelectorAll('.prob-panel').forEach(p => p.classList.remove('open'));
+            document.querySelectorAll('.prob-btn').forEach(b => b.setAttribute('aria-expanded', 'false'));
+
+            if (!isCurrentlyOpen) {
+                panel.classList.add('open');
+                btn.setAttribute('aria-expanded', 'true');
+            }
+        }
         (function initDynamicDate() {
             const today = new Date();
             const day = String(today.getDate()).padStart(2, '0');
