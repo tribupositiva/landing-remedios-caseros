@@ -183,6 +183,23 @@
             scrollbar-width: none;
         }
     </style>
+    <!-- Meta Pixel Code -->
+    <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '1575539092846698');
+    fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=1575539092846698&ev=PageView&noscript=1"
+    /></noscript>
+    <!-- End Meta Pixel Code -->
 </head>
 <body class="bg-[#eef1eb] text-brand-textDark font-sans antialiased selection:bg-brand-green selection:text-white text-base">
 
@@ -1443,6 +1460,13 @@
         }
 
         function openFastCheckout() {
+            if (typeof fbq === 'function') {
+                fbq('track', 'InitiateCheckout', {
+                    content_name: '200 Soluciones Naturales + 4 Bonus',
+                    value: 14.95,
+                    currency: 'USD'
+                });
+            }
             const modal = document.getElementById('checkoutModal');
             modal.classList.remove('hidden');
             modal.classList.add('flex');
@@ -1455,6 +1479,13 @@
         }
 
         function completeOrder(e) {
+            if (typeof fbq === 'function') {
+                fbq('track', 'Purchase', {
+                    content_name: '200 Soluciones Naturales + 4 Bonus',
+                    value: 14.95,
+                    currency: 'USD'
+                });
+            }
             e.preventDefault();
             const email = document.getElementById('checkoutEmail').value;
             closeFastCheckout();
