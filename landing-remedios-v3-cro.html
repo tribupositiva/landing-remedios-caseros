@@ -519,92 +519,118 @@
                     </a>
                 </div>
             </section>
-            <!-- 8. VISTAZO AL INTERIOR (RECETA EDITORIAL CON FOTOS REALES) -->
-            <section class="py-6 border-t border-gray-100">
-                <div class="px-6 text-center">
-                    <h2 class="text-2xl font-extrabold text-brand-textDark">Un Vistazo al Interior de Tu Libro</h2>
+            <!-- 8. VISTAZO AL INTERIOR: CAROUSEL DE RECETAS REALES -->
+            <section class="py-8 border-t border-gray-100 bg-[#fbfdfa]">
+                <div class="px-5 text-center max-w-lg mx-auto">
+                    <span class="inline-block bg-brand-greenLight/70 text-brand-greenDark font-extrabold text-[11px] uppercase tracking-wider px-3.5 py-1 rounded-full mb-2">
+                        📖 Páginas Reales del Libro
+                    </span>
+                    <h2 class="text-2xl sm:text-3xl font-extrabold text-brand-textDark leading-tight">
+                        Un Vistazo al Interior de Tu Libro
+                    </h2>
                     <p class="mt-2 text-base sm:text-lg text-[#4d4539] leading-relaxed">
-                        Cada remedio incluye ingredientes precisos, fotografías a color y el paso a paso detallado para que sepas exactamente cómo prepararlo sin dudas.
+                        Así de claras, visuales y prácticas son las <strong>200 recetas paso a paso</strong> que recibirás de inmediato en tu celular o tablet.
                     </p>
                 </div>
-                <div class="mt-5 px-3">
-                    <div class="paper-texture border border-amber-900/15 rounded-xl shadow-md overflow-hidden relative">
-                        <div class="bg-amber-50/80 border-b border-amber-900/10 py-2 px-4 flex items-center justify-between text-xs text-brand-green font-semibold">
-                            <span>🌿🌞🌱🌼</span>
-                            <span class="italic font-serif text-brand-textMuted">200 Soluciones Naturales para Problemas Cotidianos</span>
-                            <span>🌺🍃🌾🍵</span>
-                        </div>
-                        <div class="p-4">
-                            <div class="text-center mb-3">
-                                <span class="inline-flex items-center gap-1 text-brand-green font-serif font-bold text-base sm:text-lg border-b-2 border-brand-green/30 pb-0.5">
-                                    🌿 Infusión de Limpieza y Digestión Profunda
-                                </span>
-                            </div>
-                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs sm:text-[13px] leading-relaxed text-brand-textMuted">
-                                <!-- Columna Izquierda con Foto Generada -->
-                                <div class="space-y-3">
-                                    <div class="rounded-lg overflow-hidden border border-amber-900/10 shadow-sm aspect-[4/3] bg-amber-100 relative">
-                                        <img 
-                                            id="imgPreparacionInfusion"
-                                            src="images/anatomia_receta_batido.jpg" alt="Anatomía de cada receta: ingredientes, paso a paso, frecuencia y advertencias" 
-                                            onerror="this.src='https://images.unsplash.com/photo-1556679343-c7306c1976bc?auto=format&fit=crop&w=600&q=80'"
-                                            alt="Preparación de infusión herbal paso a paso" 
-                                            loading="lazy"
-                                            class="w-full h-full object-cover"
-                                        >
-                                    </div>
-                                    <p class="text-justify text-xs sm:text-[13px]">
-                                        <span class="float-left font-serif text-3xl font-bold text-brand-green mr-2 leading-none">E</span>sta infusión tradicional apoya los procesos naturales de desintoxicación del cuerpo. La raíz de bardana apoya la pureza celular, el diente de león vigoriza la función hepática y la ortiga favorece la eliminación suave de toxinas.
-                                    </p>
-                                    <!-- Cuadro Ingredientes -->
-                                    <div class="bg-white/95 border border-amber-900/15 rounded-lg p-3 shadow-xs">
-                                        <h4 class="font-bold text-brand-green text-xs sm:text-[13px] flex items-center gap-1 mb-2">
-                                            <span>🥣</span> Lo que necesitarás:
-                                        </h4>
-                                        <ul class="space-y-1 text-xs sm:text-[12.5px] pl-1 font-medium">
-                                            <li>✦ 1 cucharadita de raíz de bardana seca</li>
-                                            <li>✦ 1 cucharadita de hojas de diente de león</li>
-                                            <li>✦ 1 cucharadita de hojas de ortiga seca</li>
-                                            <li>✦ 1 taza de agua purificada (250 ml)</li>
-                                        </ul>
-                                    </div>
+
+                <!-- CARROUSEL DESLIZABLE AUTOMÁTICO CON FLECHAS Y CONTROLES -->
+                <div class="mt-6 px-4">
+                    <div class="relative max-w-[440px] mx-auto">
+                        <!-- Contenedor del Slide -->
+                        <div class="relative rounded-2xl overflow-hidden shadow-2xl border border-amber-900/15 bg-white aspect-[3/4]">
+                            <div id="recipeCarousel" class="w-full h-full relative">
+                                <!-- Slide 1 -->
+                                <div class="recipe-slide absolute inset-0 transition-opacity duration-500 opacity-100 flex flex-col justify-between">
+                                    <img src="images/receta_infusion_antiparasitaria.png" alt="Página del libro: Infusión antiparasitaria amarga con ingredientes y dosis exactas" loading="lazy" class="w-full h-full object-cover">
                                 </div>
-                                <!-- Columna Derecha con Taza Lista -->
-                                <div class="space-y-3">
-                                    <div class="bg-amber-50/70 border border-amber-900/15 rounded-lg p-3">
-                                        <h4 class="font-bold text-brand-brown text-xs sm:text-[13px] flex items-center gap-1 mb-1.5">
-                                            <span>🫖</span> Cómo Prepararlo:
-                                        </h4>
-                                        <ol class="list-decimal list-inside space-y-1 text-xs sm:text-[12.5px]">
-                                            <li><strong>Hierve el agua:</strong> Llévala a punto de ebullición.</li>
-                                            <li><strong>Añade las hierbas:</strong> Retira del fuego e incorpora las plantas.</li>
-                                            <li><strong>Tapa e infusiona:</strong> Cubre y deja reposar 10 a 15 minutos.</li>
-                                            <li><strong>Cuela y bebe:</strong> Filtra antes de consumir tibio.</li>
-                                        </ol>
-                                    </div>
-                                    <div class="bg-green-50/70 border border-brand-green/20 rounded-lg p-2.5">
-                                        <h4 class="font-bold text-brand-green text-xs flex items-center gap-1 mb-0.5">
-                                            <span>⏱️</span> Dosis y Frecuencia:
-                                        </h4>
-                                        <p class="text-xs">Beber 1 taza al día en ayunas por ciclos de 5 a 7 días.</p>
-                                    </div>
-                                    <div class="rounded-lg overflow-hidden border border-amber-900/10 shadow-sm h-32 bg-stone-200 relative">
-                                        <img 
-                                            id="imgTazaInfusion"
-                                            src="images/taza_infusion_lista.jpg" 
-                                            onerror="this.src='https://images.unsplash.com/photo-1544787219-7f47ccb76574?auto=format&fit=crop&w=600&q=80'"
-                                            alt="Taza de cerámica con infusión herbal humeante lista" 
-                                            loading="lazy"
-                                            class="w-full h-full object-cover"
-                                        >
-                                    </div>
+                                <!-- Slide 2 -->
+                                <div class="recipe-slide absolute inset-0 transition-opacity duration-500 opacity-0 pointer-events-none flex flex-col justify-between">
+                                    <img src="images/receta_tazon_probiotico.png" alt="Página del libro: Tazón probiótico para reducir antojos y calmar la flora digestiva" loading="lazy" class="w-full h-full object-cover">
+                                </div>
+                                <!-- Slide 3 -->
+                                <div class="recipe-slide absolute inset-0 transition-opacity duration-500 opacity-0 pointer-events-none flex flex-col justify-between">
+                                    <img src="images/receta_caldo_depurativo.png" alt="Página del libro: Guía del caldo depurativo de verduras" loading="lazy" class="w-full h-full object-cover">
+                                </div>
+                                <!-- Slide 4 -->
+                                <div class="recipe-slide absolute inset-0 transition-opacity duration-500 opacity-0 pointer-events-none flex flex-col justify-between">
+                                    <img src="images/receta_pagina_interior_4.png" alt="Página del libro: Receta natural ilustrada con preparación paso a paso" loading="lazy" class="w-full h-full object-cover">
+                                </div>
+                                <!-- Slide 5 -->
+                                <div class="recipe-slide absolute inset-0 transition-opacity duration-500 opacity-0 pointer-events-none flex flex-col justify-between">
+                                    <img src="images/receta_pagina_interior_5.jpg" alt="Página del libro: Remedio natural con dosis y advertencias claras" loading="lazy" class="w-full h-full object-cover">
                                 </div>
                             </div>
+
+                            <!-- Botón Anterior -->
+                            <button onclick="prevRecipeSlide()" aria-label="Receta anterior" class="absolute left-2.5 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-white/90 hover:bg-white text-brand-textDark shadow-lg border border-gray-200 flex items-center justify-center font-bold text-lg z-10 transition active:scale-95">
+                                ‹
+                            </button>
+                            <!-- Botón Siguiente -->
+                            <button onclick="nextRecipeSlide()" aria-label="Siguiente receta" class="absolute right-2.5 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-white/90 hover:bg-white text-brand-textDark shadow-lg border border-gray-200 flex items-center justify-center font-bold text-lg z-10 transition active:scale-95">
+                                ›
+                            </button>
+
+                            <!-- Indicador de Página Flotante -->
+                            <div class="absolute bottom-3 left-1/2 -translate-x-1/2 bg-black/75 backdrop-blur-md text-white text-xs font-bold px-3 py-1 rounded-full z-10 flex items-center gap-1.5">
+                                <span id="carouselCounter">1 / 5</span> • <span class="text-amber-300">Desliza para ver más</span>
+                            </div>
                         </div>
-                        <div class="bg-amber-50/80 border-t border-amber-900/10 py-1.5 px-4 flex items-center justify-between text-xs text-brand-textMuted font-medium">
-                            <span>🌿🌾🍃</span>
-                            <span class="bg-white border border-gray-200 px-3 py-0.5 rounded-full font-bold shadow-xs">Página 106 de 200</span>
-                            <span>🌼🌱🫙</span>
+
+                        <!-- Indicadores de Puntos (Dots) -->
+                        <div class="flex justify-center items-center gap-2 mt-3.5">
+                            <button onclick="goToRecipeSlide(0)" class="recipe-dot w-2.5 h-2.5 rounded-full bg-brand-green transition-all duration-300" aria-label="Ver receta 1"></button>
+                            <button onclick="goToRecipeSlide(1)" class="recipe-dot w-2.5 h-2.5 rounded-full bg-gray-300 transition-all duration-300" aria-label="Ver receta 2"></button>
+                            <button onclick="goToRecipeSlide(2)" class="recipe-dot w-2.5 h-2.5 rounded-full bg-gray-300 transition-all duration-300" aria-label="Ver receta 3"></button>
+                            <button onclick="goToRecipeSlide(3)" class="recipe-dot w-2.5 h-2.5 rounded-full bg-gray-300 transition-all duration-300" aria-label="Ver receta 4"></button>
+                            <button onclick="goToRecipeSlide(4)" class="recipe-dot w-2.5 h-2.5 rounded-full bg-gray-300 transition-all duration-300" aria-label="Ver receta 5"></button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SECCIÓN APARTE: EXPLICACIÓN DE CADA SECCIÓN DE LA PÁGINA DE RECETA (ANATOMÍA) -->
+                <div class="mt-10 px-4">
+                    <div class="rounded-3xl border-2 border-brand-green/25 bg-white p-5 sm:p-6 shadow-xl relative overflow-hidden">
+                        <div class="text-center mb-4">
+                            <span class="inline-block bg-amber-100 text-brand-brown font-extrabold text-[11px] uppercase tracking-wider px-3 py-1 rounded-full mb-1.5">
+                                🔍 Rigurosidad Editorial
+                            </span>
+                            <h3 class="text-xl sm:text-2xl font-extrabold text-brand-textDark">
+                                La Anatomía Perfecta de Cada Receta
+                            </h3>
+                            <p class="text-xs sm:text-sm text-brand-textMuted mt-1">
+                                Diseñada para que encuentres tu alivio en segundos, con dosis exactas y cero confusión.
+                            </p>
+                        </div>
+
+                        <!-- Imagen Editorial de Anatomía de Receta -->
+                        <div class="rounded-2xl overflow-hidden shadow-md border border-amber-900/15 bg-amber-50">
+                            <img src="images/anatomia_receta_batido.jpg" alt="Explicación paso a paso de cada sección de la receta: nombre, ingredientes, preparación, dosis y advertencias" loading="lazy" class="w-full h-auto object-cover">
+                        </div>
+
+                        <!-- 4 Puntos Clave de la Anatomía -->
+                        <div class="grid grid-cols-2 gap-3 mt-4 text-xs sm:text-[13px]">
+                            <div class="bg-[#f7faf4] p-3 rounded-xl border border-brand-green/20">
+                                <p class="font-bold text-brand-green">1. Ingredientes Exactos</p>
+                                <p class="text-[#4d4539] mt-0.5">Medidas en cucharadas y gramos para evitar sobredosis o preparaciones inútiles.</p>
+                            </div>
+                            <div class="bg-[#f7faf4] p-3 rounded-xl border border-brand-green/20">
+                                <p class="font-bold text-brand-green">2. Paso a Paso Claro</p>
+                                <p class="text-[#4d4539] mt-0.5">Tiempos de infusión, temperaturas y técnicas tradicionales sin rodeos.</p>
+                            </div>
+                            <div class="bg-[#f7faf4] p-3 rounded-xl border border-brand-green/20">
+                                <p class="font-bold text-brand-green">3. Dosis y Frecuencia</p>
+                                <p class="text-[#4d4539] mt-0.5">Cuántas veces al día tomarlo y por cuánto tiempo seguro para tu cuerpo.</p>
+                            </div>
+                            <div class="bg-[#f7faf4] p-3 rounded-xl border border-brand-green/20">
+                                <p class="font-bold text-brand-green">4. Advertencias Médicas</p>
+                                <p class="text-[#4d4539] mt-0.5">Precauciones para embarazo, niños o interacción con otros medicamentos.</p>
+                            </div>
+                        </div>
+
+                        <div class="mt-5 text-center">
+                            <a href="#oferta" class="inline-flex items-center justify-center gap-2 w-full sm:w-auto min-h-[48px] bg-brand-green hover:bg-brand-greenDark text-white font-extrabold text-sm uppercase tracking-wide px-7 py-3.5 rounded-xl shadow-md transition">
+                                <span>¡Quiero Estas 200 Recetas en Mi Celular! →</span>
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -1524,7 +1550,71 @@
     </div>
     <!-- SCRIPTS INTERACTIVOS -->
     <script>
-                function toggleFaq(btn) {
+                        // Carrousel de Recetas Automático y con Flechas
+        let currentRecipeIdx = 0;
+        const totalRecipeSlides = 5;
+        let recipeAutoplayTimer = null;
+
+        function updateRecipeCarousel() {
+            const slides = document.querySelectorAll('.recipe-slide');
+            const dots = document.querySelectorAll('.recipe-dot');
+            const counter = document.getElementById('carouselCounter');
+
+            slides.forEach((s, i) => {
+                if (i === currentRecipeIdx) {
+                    s.classList.remove('opacity-0', 'pointer-events-none');
+                    s.classList.add('opacity-100');
+                } else {
+                    s.classList.remove('opacity-100');
+                    s.classList.add('opacity-0', 'pointer-events-none');
+                }
+            });
+
+            dots.forEach((d, i) => {
+                if (i === currentRecipeIdx) {
+                    d.classList.remove('bg-gray-300');
+                    d.classList.add('bg-brand-green', 'w-5');
+                } else {
+                    d.classList.remove('bg-brand-green', 'w-5');
+                    d.classList.add('bg-gray-300', 'w-2.5');
+                }
+            });
+
+            if (counter) {
+                counter.textContent = `${currentRecipeIdx + 1} / ${totalRecipeSlides}`;
+            }
+        }
+
+        function nextRecipeSlide() {
+            currentRecipeIdx = (currentRecipeIdx + 1) % totalRecipeSlides;
+            updateRecipeCarousel();
+            resetRecipeAutoplay();
+        }
+
+        function prevRecipeSlide() {
+            currentRecipeIdx = (currentRecipeIdx - 1 + totalRecipeSlides) % totalRecipeSlides;
+            updateRecipeCarousel();
+            resetRecipeAutoplay();
+        }
+
+        function goToRecipeSlide(idx) {
+            currentRecipeIdx = idx;
+            updateRecipeCarousel();
+            resetRecipeAutoplay();
+        }
+
+        function resetRecipeAutoplay() {
+            clearInterval(recipeAutoplayTimer);
+            recipeAutoplayTimer = setInterval(() => {
+                currentRecipeIdx = (currentRecipeIdx + 1) % totalRecipeSlides;
+                updateRecipeCarousel();
+            }, 4000);
+        }
+
+        // Iniciar autoplay de recetas
+        resetRecipeAutoplay();
+
+        function toggleFaq(btn) {
             const content = btn.nextElementSibling;
             const icon = btn.querySelector('.faq-icon');
             const isHidden = content.classList.contains('hidden');
