@@ -219,6 +219,10 @@
             <span id="countdownTimer" class="font-mono font-bold underline ml-1" role="timer" aria-live="polite">04:18:45</span>
             <a href="#oferta" class="bg-white/20 hover:bg-white/30 px-2 py-0.5 rounded text-xs font-bold transition ml-1">Ver Oferta →</a>
         </div>
+        <!-- Banner Condicional de Cupón -->
+        <div data-cupon-show style="display:none" class="bg-amber-400 text-brand-textDark text-xs font-bold py-1 px-3 text-center">
+            🎟️ Cupón <b data-cupon-code class="underline"></b> activado en tu enlace. ¡Se aplicará automáticamente al pagar!
+        </div>
         <!-- 2. ENCABEZADO -->
         <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-sm border-b border-gray-100 px-4 py-3 flex items-center justify-between">
             <div class="flex items-center gap-1.5 text-[11px] font-bold text-brand-green bg-brand-greenLight/60 px-2.5 py-1 rounded-full">
@@ -1210,7 +1214,7 @@
                                 200 recetas paso a paso organizadas por síntoma con fotos a color y dosis exactas.
                             </p>
                             <div class="mt-1.5 flex items-center gap-2 text-xs">
-                                <span class="text-gray-400 line-through font-semibold">Precio normal: $29.90 USD</span>
+                                <span class="text-gray-400 line-through font-semibold">Precio normal: {{original_price}} {{currency}}</span>
                                 <span class="text-brand-green font-extrabold text-xs bg-brand-greenLight/60 px-2 py-0.5 rounded">Incluido</span>
                             </div>
                         </div>
@@ -1291,13 +1295,18 @@
                 </div>
                 <!-- CAJA DE RESUMEN FINAL -->
                 <div class="mt-6 bg-white rounded-2xl p-5 border-2 border-brand-green shadow-xl text-center relative">
+                    <!-- Cartel condicional de Cupón -->
+                    <div data-cupon-show style="display:none" class="bg-amber-100 border border-amber-300 text-amber-900 rounded-xl p-2.5 mb-3 text-center text-xs sm:text-sm font-bold shadow-sm">
+                        🎉 Usá el cupón <b data-cupon-code class="text-brand-cta font-black underline"></b> al pagar
+                    </div>
+
                     <div class="inline-flex items-center gap-1 bg-red-100 text-red-700 text-xs font-extrabold px-3 py-1 rounded-full mb-2">
-                        <span>🔥</span> ¡AHORRAS $14.95 USD HOY (-50% DE DESCUENTO TOTAL)!
+                        <span>🔥</span> ¡AHORRAS {{savings}} {{currency}} HOY (-50% DE DESCUENTO TOTAL)!
                     </div>
                     <div class="text-xs sm:text-sm text-brand-textMuted space-y-1 max-w-xs mx-auto border-b border-gray-100 pb-3">
                         <div class="flex justify-between">
                             <span>Libro 200 Soluciones:</span>
-                            <span class="line-through text-gray-400">$29.90 USD</span>
+                            <span class="line-through text-gray-400">{{original_price}} {{currency}}</span>
                         </div>
                         <div class="flex justify-between">
                             <span>4 Bonus Exclusivos ($17+$19+$12+$15):</span>
@@ -1305,18 +1314,18 @@
                         </div>
                         <div class="flex justify-between font-bold text-gray-700 pt-1 text-sm sm:text-base">
                             <span>Precio Regular Total:</span>
-                            <span class="line-through text-red-500 font-extrabold">$29.90 USD</span>
+                            <span class="line-through text-red-500 font-extrabold">{{original_price}} {{currency}}</span>
                         </div>
                     </div>
                     <div class="mt-3">
                         <p class="text-xs font-bold uppercase tracking-wider text-brand-textMuted">Lleva el Paquete Completo Hoy Por Solo:</p>
                         <div class="flex items-center justify-center gap-2.5 mt-1">
-                            <span class="text-xl sm:text-2xl text-gray-400 line-through font-bold">$29.90</span>
-                            <span class="text-4xl sm:text-5xl font-extrabold text-brand-cta tracking-tight">$14.95</span>
+                            <span class="text-xl sm:text-2xl text-gray-400 line-through font-bold">{{original_price}}</span>
+                            <span class="text-4xl sm:text-5xl font-extrabold text-brand-cta tracking-tight">{{price}}</span>
                             <span class="bg-red-600 text-white text-xs font-extrabold px-2.5 py-1 rounded-md">
                                 -50% OFF
                             </span>
-                            <span class="text-sm sm:text-base font-bold text-gray-700 ml-0.5">USD</span>
+                            <span class="text-sm sm:text-base font-bold text-gray-700 ml-0.5">{{currency}}</span>
                         </div>
                         <p class="text-xs sm:text-sm text-brand-textMuted mt-1.5 font-medium">Pago único • Sin suscripciones • Acceso vitalicio</p>
                         <p class="text-sm sm:text-base text-[#4a4237] bg-amber-50 border border-amber-200/80 rounded-xl px-3.5 py-2.5 mt-3 font-medium leading-snug">
@@ -1478,8 +1487,8 @@
                 </div>
                 <!-- Mini CTA tras FAQ -->
                 <div class="mt-7 text-center">
-                    <a href="#oferta" class="inline-flex items-center justify-center gap-2 w-full sm:w-auto min-h-[54px] bg-brand-cta hover:bg-brand-ctaDark hover:-translate-y-0.5 text-white font-extrabold text-base uppercase tracking-wide px-8 py-4 rounded-2xl shadow-xl shadow-orange-900/20 transition">
-                        <span>¡Quiero Probar Mi Pack Sin Riesgo por $14.95!</span>
+                    <a href="/checkout?cupon=NATURAL50" data-checkout class="inline-flex items-center justify-center gap-2 w-full sm:w-auto min-h-[54px] bg-brand-cta hover:bg-brand-ctaDark hover:-translate-y-0.5 text-white font-extrabold text-base uppercase tracking-wide px-8 py-4 rounded-2xl shadow-xl shadow-orange-900/20 transition">
+                        <span>¡Quiero Probar Mi Pack Sin Riesgo por {{price}} {{currency}}!</span>
                         <span>→</span>
                     </a>
                     <p class="mt-3 text-xs text-brand-textMuted font-medium">⚡ Descarga inmediata en PDF • 🔒 Encriptación SSL • 🛡️ Garantía Total 7 días</p>
@@ -1508,8 +1517,8 @@
                 </div>
                 <p class="text-[11px] font-semibold text-brand-brown">🔥 -50% OFF • Últimos 11 cupos hoy</p>
             </div>
-            <a href="#oferta" class="min-h-[48px] flex items-center justify-center bg-brand-cta hover:bg-brand-ctaDark text-white font-extrabold text-xs sm:text-sm uppercase tracking-wider px-4 py-3 rounded-xl shadow-md transition shrink-0">
-                Asegurar Mi Pack ($14.95) →
+            <a href="/checkout?cupon=NATURAL50" data-checkout class="min-h-[48px] flex items-center justify-center bg-brand-cta hover:bg-brand-ctaDark text-white font-extrabold text-xs sm:text-sm uppercase tracking-wider px-4 py-3 rounded-xl shadow-md transition shrink-0">
+                Asegurar Mi Pack ({{price}} {{currency}}) →
             </a>
         </div>
         <!-- MODAL DE CHECKOUT -->
@@ -1607,8 +1616,8 @@
             <p id="couponTimer" class="font-mono text-lg font-extrabold text-red-600 mt-0.5">
                 15m 00s
             </p>
-            <a href="#oferta" class="mt-2 block w-full bg-brand-cta hover:bg-brand-ctaDark text-white font-extrabold text-xs uppercase tracking-wider py-2.5 px-3 rounded-xl shadow transition text-center">
-                Asegurar por $14.95 →
+            <a href="/checkout?cupon=NATURAL50" data-checkout class="mt-2 block w-full bg-brand-cta hover:bg-brand-ctaDark text-white font-extrabold text-xs uppercase tracking-wider py-2.5 px-3 rounded-xl shadow transition text-center">
+                Asegurar por {{price}} {{currency}} →
             </a>
         </div>
 
@@ -1855,13 +1864,69 @@
         function applyCoupon() {
             closeCouponModal();
             startCouponTimer();
-            showToast("¡Cupón NATURAL50 Activado!", "Tu 50% de descuento ($14.95) y los 4 bonus han sido reservados.");
+            showToast("¡Cupón NATURAL50 Activado!", "Tu 50% de descuento y los 4 bonus han sido reservados.");
+            document.querySelectorAll('a[href^="/checkout"], a[data-checkout]').forEach(btn => {
+                btn.href = '/checkout?cupon=NATURAL50';
+            });
         }
 
         function hideAppliedWidget() {
             const widget = document.getElementById('appliedCouponWidget');
             if (widget) widget.classList.add('hidden');
         }
+
+        // Soporte de Tokens de Plataforma y Cupones en URL (?cupon=CODIGO)
+        (function initPlatformIntegration() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const cuponParam = urlParams.get('cupon') || urlParams.get('coupon');
+
+            if (cuponParam) {
+                // Mostrar cartel data-cupon-show
+                document.querySelectorAll('[data-cupon-show]').forEach(el => {
+                    el.style.display = 'block';
+                });
+                // Rellenar código con data-cupon-code
+                document.querySelectorAll('[data-cupon-code]').forEach(el => {
+                    el.textContent = cuponParam;
+                });
+                // Ocultar elementos con data-cupon-hide
+                document.querySelectorAll('[data-cupon-hide]').forEach(el => {
+                    el.style.display = 'none';
+                });
+                // Actualizar todos los enlaces de compra con el cupón recibido
+                document.querySelectorAll('a[href^="/checkout"], a[data-checkout]').forEach(btn => {
+                    btn.href = `/checkout?cupon=${encodeURIComponent(cuponParam)}`;
+                });
+            }
+
+            // Respaldo client-side para previsualización fuera del motor de la plataforma (ej. Vercel o local)
+            const tokenFallbacks = {
+                '{{price}}': '$14.95',
+                '{{original_price}}': '$29.90',
+                '{{savings}}': '$14.95',
+                '{{currency}}': 'USD'
+            };
+
+            // Solo si los tokens aún existen en el texto renderizado (no reemplazados por el servidor)
+            if (document.body.innerHTML.includes('{{price}}') || document.body.innerHTML.includes('{{currency}}')) {
+                function replaceNodeTokens(node) {
+                    if (node.nodeType === Node.TEXT_NODE) {
+                        let val = node.nodeValue;
+                        if (val.includes('{{')) {
+                            for (const [k, v] of Object.entries(tokenFallbacks)) {
+                                val = val.split(k).join(v);
+                            }
+                            node.nodeValue = val;
+                        }
+                    } else if (node.nodeType === Node.ELEMENT_NODE) {
+                        for (let i = 0; i < node.childNodes.length; i++) {
+                            replaceNodeTokens(node.childNodes[i]);
+                        }
+                    }
+                }
+                replaceNodeTokens(document.body);
+            }
+        })();
         // Track ViewContent cuando el lector llega a la oferta (Meta Pixel)
         (function trackOfferViewContent() {
             const offerEl = document.getElementById('oferta');
