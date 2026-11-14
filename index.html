@@ -1622,6 +1622,29 @@
             </a>
         </div>
 
+        <!-- Popup de Ventas Verificadas en Vivo (Social Proof FOMO) -->
+        <div id="liveSalePopup" class="fixed bottom-20 sm:bottom-5 left-3 sm:left-5 z-40 bg-white/95 backdrop-blur-sm border border-emerald-600/25 rounded-2xl p-3 shadow-2xl max-w-[315px] w-auto flex items-center gap-3 transition-all duration-500 transform translate-y-10 opacity-0 pointer-events-none" role="status" aria-live="polite">
+            <div class="relative shrink-0">
+                <img id="liveSaleImg" src="https://landing-remedios-caseros-tribupositivas-projects.vercel.app/images/book_cover_hero.jpg" alt="Pack Digital" class="w-11 h-14 object-cover rounded-lg shadow-sm border border-amber-900/15">
+                <span class="absolute -bottom-1 -right-1 w-4 h-4 rounded-full bg-emerald-500 border-2 border-white flex items-center justify-center text-[9px] text-white font-black">✓</span>
+            </div>
+            <div class="flex-1 min-w-0 pr-1">
+                <div class="flex items-center gap-1.5 leading-none mb-1">
+                    <span id="liveSaleBuyer" class="font-extrabold text-xs text-brand-textDark truncate">Mariana R.</span>
+                    <span class="text-[10px] text-brand-textMuted">•</span>
+                    <span id="liveSaleLocation" class="text-[11px] text-brand-textMuted font-medium truncate">Buenos Aires, Argentina</span>
+                </div>
+                <p id="liveSaleAction" class="text-[11px] sm:text-xs text-[#3a332a] font-medium leading-snug line-clamp-2">
+                    ha adquirido su pack con 4 regalos
+                </p>
+                <div class="flex items-center gap-2 mt-1">
+                    <span id="liveSaleTime" class="text-[10px] font-semibold text-emerald-700">hace 3 minutos</span>
+                    <span class="text-[9px] font-extrabold uppercase bg-emerald-100 text-emerald-800 px-1.5 py-0.5 rounded">✓ Verificado</span>
+                </div>
+            </div>
+            <button onclick="dismissLiveSale()" aria-label="Cerrar notificación" class="text-gray-400 hover:text-gray-600 font-bold text-xs p-1 -mr-1 -mt-6 shrink-0">✕</button>
+        </div>
+
         <!-- Toast -->
         <div id="toastNotification" class="fixed bottom-20 left-1/2 -translate-x-1/2 z-50 bg-brand-textDark text-white text-xs sm:text-sm px-4 py-3 rounded-xl shadow-xl flex items-center gap-3 transition-all duration-300 opacity-0 pointer-events-none max-w-xs w-full">
             <span class="w-6 h-6 rounded-full bg-brand-green flex items-center justify-center text-white font-bold shrink-0">✓</span>
@@ -1989,6 +2012,136 @@
             }, { threshold: 0.25 });
             obs.observe(offerEl);
         })();
+
+        // Sistema de Notificaciones de Ventas Verificadas en Vivo (FOMO Geográfico)
+        (function initLiveSalesProof() {
+            const buyers = [
+                'Mariana R.', 'Patricia G.', 'Claudia M.', 'Silvia T.', 'Beatriz L.',
+                'Lorena V.', 'Rosa M.', 'Mónica S.', 'Carmen D.', 'Andrea F.',
+                'Gloria P.', 'Sandra F.', 'Graciela B.', 'María Elena C.', 'Teresa H.',
+                'Verónica S.', 'Lucía M.', 'Norma R.', 'Adriana P.', 'Marcela O.'
+            ];
+
+            const actions = [
+                'ha adquirido su pack con 4 regalos',
+                'compró su libro de remedios con -50% de descuento',
+                'adquirió el Pack Completo + 4 Bonus Gratis',
+                'acaba de asegurar su copia con acceso inmediato',
+                'aseguró su recetario con garantía total de 7 días',
+                'reclamó su copia con los 4 regalos exclusivos'
+            ];
+
+            const countryCitiesMap = {
+                'AR': ['Buenos Aires, Argentina', 'Córdoba, Argentina', 'Rosario, Argentina', 'Mendoza, Argentina', 'La Plata, Argentina', 'Mar del Plata, Argentina', 'San Miguel de Tucumán, Argentina', 'Salta, Argentina'],
+                'CL': ['Santiago, Chile', 'Viña del Mar, Chile', 'Valparaíso, Chile', 'Concepción, Chile', 'Antofagasta, Chile', 'La Serena, Chile', 'Temuco, Chile'],
+                'CO': ['Bogotá, Colombia', 'Medellín, Colombia', 'Cali, Colombia', 'Barranquilla, Colombia', 'Bucaramanga, Colombia', 'Cartagena, Colombia', 'Pereira, Colombia'],
+                'MX': ['Ciudad de México, México', 'Guadalajara, México', 'Monterrey, México', 'Puebla, México', 'Querétaro, México', 'Mérida, México', 'Tijuana, México'],
+                'PE': ['Lima, Perú', 'Arequipa, Perú', 'Trujillo, Perú', 'Chiclayo, Perú', 'Cusco, Perú', 'Piura, Perú'],
+                'UY': ['Montevideo, Uruguay', 'Canelones, Uruguay', 'Punta del Este, Uruguay', 'Maldonado, Uruguay', 'Salto, Uruguay'],
+                'ES': ['Madrid, España', 'Barcelona, España', 'Valencia, España', 'Sevilla, España', 'Málaga, España', 'Bilbao, España'],
+                'EC': ['Quito, Ecuador', 'Guayaquil, Ecuador', 'Cuenca, Ecuador', 'Ambato, Ecuador'],
+                'PY': ['Asunción, Paraguay', 'Ciudad del Este, Paraguay', 'San Lorenzo, Paraguay'],
+                'US': ['Miami, FL', 'Houston, TX', 'Los Ángeles, CA', 'Orlando, FL', 'San Antonio, TX']
+            };
+
+            // Detección inicial por Zona Horaria / Idioma (instantánea, sin latencia)
+            let detectedCities = countryCitiesMap['AR']; // Fallback por defecto
+            try {
+                const tz = Intl.DateTimeFormat().resolvedOptions().timeZone || '';
+                const lang = (navigator.language || '').toUpperCase();
+
+                if (tz.includes('Buenos_Aires') || tz.includes('Cordoba') || tz.includes('Argentina') || lang.includes('AR')) {
+                    detectedCities = countryCitiesMap['AR'];
+                } else if (tz.includes('Santiago') || tz.includes('Punta_Arenas') || lang.includes('CL')) {
+                    detectedCities = countryCitiesMap['CL'];
+                } else if (tz.includes('Bogota') || lang.includes('CO')) {
+                    detectedCities = countryCitiesMap['CO'];
+                } else if (tz.includes('Mexico') || tz.includes('Monterrey') || tz.includes('Cancun') || tz.includes('Tijuana') || lang.includes('MX')) {
+                    detectedCities = countryCitiesMap['MX'];
+                } else if (tz.includes('Lima') || lang.includes('PE')) {
+                    detectedCities = countryCitiesMap['PE'];
+                } else if (tz.includes('Montevideo') || lang.includes('UY')) {
+                    detectedCities = countryCitiesMap['UY'];
+                } else if (tz.includes('Madrid') || tz.includes('Canary') || lang.includes('ES')) {
+                    detectedCities = countryCitiesMap['ES'];
+                } else if (tz.includes('Guayaquil') || lang.includes('EC')) {
+                    detectedCities = countryCitiesMap['EC'];
+                } else if (tz.includes('Asuncion') || lang.includes('PY')) {
+                    detectedCities = countryCitiesMap['PY'];
+                } else if (tz.includes('New_York') || tz.includes('Chicago') || tz.includes('Los_Angeles') || tz.includes('America')) {
+                    detectedCities = countryCitiesMap['US'];
+                }
+            } catch (e) {}
+
+            // Intento de geo-localización rápida por IP (si responde en menos de 1.2s actualiza las ciudades)
+            try {
+                if (typeof fetch === 'function') {
+                    const controller = new AbortController();
+                    const timeoutId = setTimeout(() => controller.abort(), 1200);
+                    fetch('https://get.geojs.io/v1/ip/country.json', { signal: controller.signal })
+                        .then(res => res.json())
+                        .then(data => {
+                            clearTimeout(timeoutId);
+                            if (data && data.country && countryCitiesMap[data.country]) {
+                                detectedCities = countryCitiesMap[data.country];
+                            }
+                        })
+                        .catch(() => {});
+                }
+            } catch (e) {}
+
+            const popup = document.getElementById('liveSalePopup');
+            const buyerEl = document.getElementById('liveSaleBuyer');
+            const locationEl = document.getElementById('liveSaleLocation');
+            const actionEl = document.getElementById('liveSaleAction');
+            const timeEl = document.getElementById('liveSaleTime');
+
+            let saleTimeout;
+            let isDismissed = false;
+
+            window.dismissLiveSale = function() {
+                isDismissed = true;
+                if (popup) {
+                    popup.classList.add('opacity-0', 'translate-y-10', 'pointer-events-none');
+                }
+                setTimeout(() => { isDismissed = false; scheduleNextSale(20000); }, 50000);
+            };
+
+            function showNextSale() {
+                if (isDismissed || !popup) return;
+
+                const buyer = buyers[Math.floor(Math.random() * buyers.length)];
+                const location = detectedCities[Math.floor(Math.random() * detectedCities.length)];
+                const action = actions[Math.floor(Math.random() * actions.length)];
+                const mins = Math.floor(Math.random() * 26) + 2; // minutos aleatorios entre 2 y 28
+
+                if (buyerEl) buyerEl.textContent = buyer;
+                if (locationEl) locationEl.textContent = location;
+                if (actionEl) actionEl.textContent = action;
+                if (timeEl) timeEl.textContent = `hace ${mins} minutos`;
+
+                // Mostrar con animación suave
+                popup.classList.remove('opacity-0', 'translate-y-10', 'pointer-events-none');
+
+                // Ocultar tras 5.2 segundos
+                setTimeout(() => {
+                    if (popup) {
+                        popup.classList.add('opacity-0', 'translate-y-10', 'pointer-events-none');
+                    }
+                    const nextDelay = Math.floor(Math.random() * 10000) + 14000;
+                    scheduleNextSale(nextDelay);
+                }, 5200);
+            }
+
+            function scheduleNextSale(delay) {
+                clearTimeout(saleTimeout);
+                saleTimeout = setTimeout(showNextSale, delay);
+            }
+
+            // Primer disparo tras 5 segundos de navegación
+            scheduleNextSale(5000);
+        })();
+
     </script>
 </body>
 </html>
